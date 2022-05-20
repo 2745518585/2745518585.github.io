@@ -8,7 +8,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="好好刷题，天天向上！">
 <meta name="theme-color" content="#000">
-<title>AC自动机 | 赵悦岑&#39;s Blog</title>
+<title>P3356 火星探险问题 | 赵悦岑&#39;s Blog</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1653025761224">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -41,8 +41,8 @@
 
 
 
-  <meta name="description" content="AC自动机" />
-  <meta name="keywords" content="字符串算法,AC自动机" />
+  <meta name="description" content="P3356 火星探险问题" />
+  <meta name="keywords" content="网络流,费用流" />
 </head>
 
 <body>
@@ -219,9 +219,7 @@
     <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
-<li><a href="#ac%E8%87%AA%E5%8A%A8%E6%9C%BA">AC自动机</a></li>
-<li><a href="#ac%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%8A%A0%E5%BC%BA%E7%89%88">AC自动机加强版</a></li>
+<li><a href="#%E5%88%86%E6%9E%90">分析</a></li>
 <li><a href="#code">code</a></li>
 </ul>
 </li>
@@ -490,14 +488,14 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://2745518585.github.io/post/Aho-Corasick-automaton/"> AC自动机 </a>
+    <a class="post-title-link" href="https://2745518585.github.io/post/p3356-huo-xing-tan-xian-wen-ti/"> P3356 火星探险问题 </a>
   </h1>
   <div class="post-meta">
     
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2022-02-14 15:23:26">2022-02-14</span>
+      <span class="publish-time" data-t="2022-05-14 19:41:57">2022-05-14</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -505,9 +503,9 @@
       <i class="fa fa-folder-o"></i>
       <span class="pc-show language" data-lan="category-in">标签:</span>
        
-      <a href="https://2745518585.github.io/tag/String-algorithm/"> <span>字符串算法</span> </a>、   
-      <a href="https://2745518585.github.io/tag/Aho-Corasick-automaton/">
-        <span>AC自动机</span>
+      <a href="https://2745518585.github.io/tag/Network-flows/"> <span>网络流</span> </a>、   
+      <a href="https://2745518585.github.io/tag/Minimum-cost-maximum-flow/">
+        <span>费用流</span>
       </a>
        
     </span>
@@ -516,7 +514,7 @@
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
       <span
-        >11<span class="language" data-lan="minute"
+        >5<span class="language" data-lan="minute"
           >分钟</span
         ></span
       >
@@ -525,7 +523,7 @@
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
       <span
-        >2567<span class="pc-show language" data-lan="words"
+        >750<span class="pc-show language" data-lan="words"
           >字数</span
         ></span
       >
@@ -535,202 +533,153 @@
 </section>
 
             <div class="post-body next-md-body" id="post_body">
-              <h2 id="前言">前言</h2>
-<p>  KMP是一种很神奇的算法，它能够快速匹配模式串与文本串。但是如果遇到了多个模式串的情况，KMP 就需要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>k</mi><mo>×</mo><mo>(</mo><mi>n</mi><mo>+</mo><mi>m</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(k\times(n+m))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span> 的时间，在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 很大的时候，KMP 是过不了这个题的，所以我们就需要一个新的算法：AC自动机。</p>
-<h2 id="ac自动机">AC自动机</h2>
-<p>  模板题：<a href="https://www.luogu.com.cn/problem/P3808">P3808 【模板】AC 自动机（简单版）</a><br>
-  我们已经知道了 Trie 和 KMP，一个是用于储存多个字符串，另一个是在一个文本串中查找一个模式串。而 AC 自动机需要实现在一个文本串中查找多个模式串，所以我们只需要将上面两者结合即可。<br>
-  在 KMP 中，每一个节点都有一个失配指针，在文本串与模式串失配后跳转到模式串的对应位置。如果我们把 Trie 上的每一个节点都配上一个失配指针，只要文本串与字典树在此失配后跳转到字典树对应节点即可。失配指针指向的节点对应的字符串一定是适配节点对应的字符串的后缀，这样这个节点才能与文本串匹配。<br>
-  但是字典树上不只有一个模式串，在一个位置可能有多个模式串可以匹配上文本串。但是在这个字符串已经与文本串匹配的时候，下一个可以匹配的字符串一定也可以和这个字符串匹配，所以下一个字符串一定是这一个字符串的后缀。刚好，失配指针也是要找到对应字符串的后缀，所以我们在找更多可以匹配的模式串时只需要跳转到失配指针对应的节点即可，<s>虽然并没有失配</s>。<br>
-  AC 自动机的实现大概分为以下三步：建字典树、求失配指针指针、跑 AC 自动机。<br>
-  字典树的建立和平常没有什么区别，只是要注意不仅要存每个节点是否有结束的模式串，还要记录有多少个。</p>
-<pre><code class="language-cpp">void build(char *x)
-{
-    int k=1;    //表示当前节点
-    for(int i=1;x[i];++i)   //依次匹配模式串的每个字符
-    {
-        if(a[k][x[i]-'a']==0) a[k][x[i]-'a']=++q;
-        //如果没有当前字符对应的节点，就新建一个节点。
-        k=a[k][x[i]-'a'];//跳转到下一个节点
-    }
-    ++g[k]; //记录当前节点的模式串个数
-}
-</code></pre>
-<p>  求失配指针相当于是 AC 自动机的核心，也是最难理解的地方。<br>
-  在建好字典树后，我们一般用 bfs 遍历整棵树。注意在遍历过程中数组f储存的是已配指针。同样，失配指针是储存在数组f中的。在求一个点的失配指针时，共有2种情况。<br>
-  不过在求失配指针时，我们还会用到一些不存在的节点。这些点存在的意义就是让程序在匹配时知道如果文本串对应到这个点就会失配，并直接给出失配指针，这样可以更加的方便。<br>
-  在开始前，我们还要将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 号节点的所有儿子设为根节点，因为如果有一个点对应的字符串无法在字典树中找到它的后缀，它的失配指针就会指向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 的儿子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>，但是实际上它应该跳转到根节点，所以把0号点所有儿子都指向根节点即可。<br>
-  当我们搜索到点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>，它对应的字符为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>，父节点为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>。当点i存在时，它的失配指针就是点k的失配指针指向的节点的儿子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>。什么意思，见下图：<br>
-<img src="https://cdn.luogu.com.cn/upload/image_hosting/udw2lc47.png?x-oss-process=image/resize,m_lfit,h_170,w_225" alt="1" width="300" height="200" loading="lazy"><br>
-<img src="https://cdn.luogu.com.cn/upload/image_hosting/jae281vb.png?x-oss-process=image/resize,m_lfit,h_170,w_225" alt="2" width="300" height="200" loading="lazy"><br>
-（图片来自网络）<br>
-  第一幅图就是第一步建立出来的字典树，第二幅图表示每个节点的失配指针。举个例子，我们现在在访问最左侧的节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>，它的父节点是上面的点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>，点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 的失配指针指向根节点的儿子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>。点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 对应的字符串是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mi>b</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">abc</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault">b</span><span class="mord mathdefault">c</span></span></span></span>。我们先找到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 的失配节点，也就是中间的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span>，然后再找到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span></span></span></span> 位置对应的儿子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>，也就是中间的点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span>，这样我们就找到了它对应的失配指针。<br>
-  如果点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的失配指针指向的节点没有儿子节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 怎么办？其实是一样的，由于这个点不存在，所以这个位置就不存在原字符串的后缀，它的失配指针其实就直接指向了这个点的失配指针，所以它总会指向一个存在的点。在求完失配指针后，我们还要讲这个点入队来继续 bfs。<br>
-  当我们搜索到点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span>，它对应的字符为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>，父节点为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span>。当点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 不存在时，点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的儿子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 就是点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的失配指针指向的节点的儿子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>。<br>
-  因为点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 不存在，所以文本串如果匹配到此处必然失配，所以我们可以简单地将点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的儿子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 指向点i的失配节点。点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathdefault">i</span></span></span></span> 的失配指针的求法同上，就是点k的失配节点的儿子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 。由于这个点实际上不存在，所以不需要入队。如图：<br>
-<img src="https://cdn.luogu.com.cn/upload/image_hosting/z4n1xw48.png?x-oss-process=image/resize,m_lfit,h_170,w_225" alt="3" width="300" height="200" loading="lazy"></p>
-<pre><code class="language-cpp">void bfs()
-{
-    queue&lt;int&gt; Q;   //搜索时用的队列
-    for(int i=0;i&lt;=25;++i)  //将节点0的所有儿子设为1
-    {
-        a[0][i]=1;
-    }
-    f[1]=0; //根节点的失配指针只用于求其它点的失配指针
-    Q.push(1);  //根节点入队
-    while(!Q.empty())   //bfs
-    {
-        int k=Q.front();    //提取队首节点
-        Q.pop();
-        for(int i=0;i&lt;=25;++i)  //访问所有儿子节点
-        {
-            if(a[k][i]!=0)  //这个点存在
-            {
-                Q.push(a[k][i]);    //入队
-                f[a[k][i]]=a[f[k]][i];  //求失配指针
-            }
-            else    //这个点不存在
-            {
-                a[k][i]=a[f[k]][i]; //求失配指针
-            }
-        }
-    }
-}
-</code></pre>
-<p>  在求完失配指针后，我们就可以跑 AC 自动机了。<br>
-  首先我们需要定义一个变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 记录当前匹配到的字典树节点，初始值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，还有一个变量s储存出现过的模式串个数。<br>
-  然后我们要依次访问整个文本串。每一次访问都将x更新为节点x对应文本串当前字符的儿子。如果节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 有这个儿子，那么x就会指向这一个儿子节点；如果没有，它就会自动跳转到节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 的失配指针指向的节点。然后我们要新定义一个变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">k = x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>，循环访问节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 的失配指针指向的节点，找到的这些都是可以与文本串匹配的字符串，所以我们要在这时记录个数，不过还要用一个数组来判断一个模式串是否已经被记录过。如果某一次节点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 已经被记录过，那么之前一定也记录过点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 之后所有可以与文本串匹配的模式串，所以可以直接退出循环。</p>
-<pre><code class="language-cpp">char c[1000001];
-cin&gt;&gt;c+1;
-int m=strlen(c+1);
-int s=0,x=1;
-for(int i=1;i&lt;=m;++i)   //依次访问文本串
-{
-    x=a[x][c[i]-'a'];   //更新当前的点
-    int k=x;
-    while(k!=0&amp;&amp;h[k]==false)//记录所有可以匹配的模式串
-    {
-        s+=g[k];    //计数
-        h[k]=true;  //标记
-        k=f[k];     //跳转至下一个
-    }
-}
-</code></pre>
-<h2 id="ac自动机加强版">AC自动机加强版</h2>
-<p>  模板题：<a href="https://www.luogu.com.cn/problem/P3796">【模板】AC 自动机（加强版）</a><br>
-  模板题：<a href="https://www.luogu.com.cn/problem/P5357">【模板】AC 自动机（二次加强版）</a><br>
-  有的时候我们不仅要求出一个模式串是否在文本串中出现过，我们还需要知道它出现的次数。这时候我们就需要修改一下之前的方法，我们不能跳过已经有标记的点了，就像这样：</p>
-<pre><code class="language-cpp">while(k!=0)
-{
-    h[k]+=g[k];
-    k=f[k];
-}
-</code></pre>
-<p>  这样下来一个点就可能不止被访问一遍，于是就会导致 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="purple"><mrow><mi>T</mi><mi>L</mi><mi>E</mi></mrow></mstyle></mrow><annotation encoding="application/x-tex">\color{purple}{TLE}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord" style="color:purple;"><span class="mord mathdefault" style="margin-right:0.13889em;color:purple;">T</span><span class="mord mathdefault" style="color:purple;">L</span><span class="mord mathdefault" style="margin-right:0.05764em;color:purple;">E</span></span></span></span></span>。如何解决这个问题呢？如果我们把一个点的失配指针指向的点和这个点连接起来，那么就会形成一个链，如果位于链首的点匹配成功一次，意味着后面所有点都会匹配成功一次。所以我们可以先统计第一个点匹配的次数，最后再更新后面所有点，复杂度就可以大大降低了。如何实现？我们再把失配指针当做一条有向边，所有的点必然会形成一个有向无环图，所以只需要在最后进行拓扑排序即可。</p>
-<pre><code class="language-cpp">void abc()
-{
-    queue&lt;int&gt; Q;       //定义队列
-    for(int i=1;i&lt;=q;++i)
-    {
-        if(r[i]==0) Q.push(i);      //入度为0的点入队
-    }
-    while(!Q.empty())
-    {
-        int k=Q.front();
-        Q.pop();
-        h[f[k]]+=h[k];      //统计
-        --r[f[k]];      //入度减一
-        if(r[f[k]]==0) Q.push(f[k]);    //如果入度为0则入队
-    }
-}
-</code></pre>
+              <p>  <a href="https://www.luogu.com.cn/problem/P3356">P3356 火星探险问题</a></p>
+<h2 id="分析">分析</h2>
+<p>  这道题的方法同 <a href="https://2745518585.github.io/post/P4012-solution/">P4012</a> ，但是还要求输出一种方案，我们就需要知道流量的流动情况。如果一条边有流量流过，那么这条边的反向边容量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 一定不为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，而且流过的流量就是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>，也就是有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span> 个探测车经过。我们只需要从源点开始一直走反向边容量不为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span> 的边，且每走一次容量减一，注意要判断有没有往回走，还要注意处理拆开的两个点的关系。</p>
 <h2 id="code">code</h2>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;cstring&gt;
-#include&lt;cstdio&gt;
+<pre><code class="language-cpp">#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
 #include&lt;queue&gt;
 using namespace std;
-int n,q=1,a[1000001][26],f[1000001],g[1000001],h[1000001],r[1000001];
-void build(char *x,int t)
+typedef long long ll;
+const int N=100001,M=1000001;
+int n,m,p=1,s1,s2,t[N],t0[N];
+ll v,f[N],q;
+bool h[N];
+struct road
 {
-    int k=1;
-    for(int i=1;x[i];++i)
-    {
-        if(a[k][x[i]-'a']==0)
-        {
-            a[k][x[i]-'a']=++q;
-        }
-        k=a[k][x[i]-'a'];
-    }
-    g[t]=k;
+    int m,q;
+    ll r,w;
+}a[M];
+int sum(int x,int y)
+{
+    return (x-1)*n+y;
 }
-void bfs()
+void road(int x,int y,ll r,ll w)
+{
+    a[++p].m=y;
+    a[p].q=t[x];
+    t[x]=p;
+    a[p].r=r;
+    a[p].w=w;
+}
+bool SPFA()
 {
     queue&lt;int&gt; Q;
-    for(int i=0;i&lt;=25;++i)
+    Q.push(s1);
+    for(int i=1;i&lt;=s2;++i)
     {
-        a[0][i]=1;
+        f[i]=-1e18;
+        h[i]=false;
     }
-    f[1]=0;
-    Q.push(1);
+    f[s1]=0;
+    h[s1]=true;
     while(!Q.empty())
     {
         int k=Q.front();
         Q.pop();
-        for(int i=0;i&lt;=25;++i)
+        if(h[k]==false) continue;
+        h[k]=false;
+        for(int i=t[k];i!=0;i=a[i].q)
         {
-            if(a[k][i]!=0)
+            if(a[i].r&gt;0&amp;&amp;f[k]+a[i].w&gt;f[a[i].m])
             {
-                Q.push(a[k][i]);
-                f[a[k][i]]=a[f[k]][i];
-                ++r[a[f[k]][i]];
-            }
-            else
-            {
-                a[k][i]=a[f[k]][i];
+                f[a[i].m]=f[k]+a[i].w;
+                Q.push(a[i].m);
+                h[a[i].m]=true;
             }
         }
     }
+    if(f[s2]!=-1e18) return true;
+    return false;
 }
-void abc()
+ll dfs(int x,ll r)
 {
-    queue&lt;int&gt; Q;
-    for(int i=1;i&lt;=q;++i)
+    if(x==s2) return r;
+    ll s=0;
+    for(int i=t0[x];i!=0;i=a[i].q)
     {
-        if(r[i]==0) Q.push(i);
+        t0[x]=i;
+        if(h[a[i].m]==false&amp;&amp;a[i].r&gt;0&amp;&amp;f[a[i].m]==f[x]+a[i].w)
+        {
+            h[a[i].m]=true;
+            ll z=dfs(a[i].m,min(r,a[i].r));
+            h[a[i].m]=false;
+            if(z!=0)
+            {
+                a[i].r-=z;
+                a[i^1].r+=z;
+                r-=z;
+                s+=z;
+                v+=z*a[i].w;
+            }
+            else f[a[i].m]=0;
+            if(r==0) return s;
+        }
     }
-    while(!Q.empty())
+    return s;
+}
+void dfs0(int x,int k)
+{
+    if(x==sum(m,n)) return;
+    for(int i=t[m*n+x];i!=0;i=a[i].q)
     {
-        int k=Q.front();
-        Q.pop();
-        h[f[k]]+=h[k];
-        --r[f[k]];
-        if(r[f[k]]==0) Q.push(f[k]);
+        if(a[i].m==x||a[i^1].r==0) continue;
+        ++a[i].r;
+        --a[i^1].r;
+        if(a[i].m==x+1) printf(&quot;%d 1\n&quot;,k);
+        else printf(&quot;%d 0\n&quot;,k);
+        dfs0(a[i].m,k);
+        return;
     }
 }
 int main()
 {
-    scanf(&quot;%d&quot;,&amp;n);
-    for(int i=1;i&lt;=n;++i)
-    {
-        char x[200001];
-        cin&gt;&gt;x+1;
-        build(x,i);
-    }
-    bfs();
-    char c[2000001];
-    cin&gt;&gt;c+1;
-    int m=strlen(c+1);
-    int x=1;
+    scanf(&quot;%lld%d%d&quot;,&amp;q,&amp;n,&amp;m);
+    s1=m*n*2+1,s2=m*n*2+2;
     for(int i=1;i&lt;=m;++i)
     {
-        x=a[x][c[i]-'a'];
-        ++h[x];
+        for(int j=1;j&lt;=n;++j)
+        {
+            int x;
+            scanf(&quot;%d&quot;,&amp;x);
+            if(x==1) continue;
+            if(x==2)
+            {
+                road(sum(i,j),m*n+sum(i,j),1,1);
+                road(m*n+sum(i,j),sum(i,j),0,-1);
+            }
+            road(sum(i,j),m*n+sum(i,j),1e18,0);
+            road(m*n+sum(i,j),sum(i,j),0,0);
+            if(i&lt;m)
+            {
+                road(m*n+sum(i,j),sum(i+1,j),1e18,0);
+                road(sum(i+1,j),m*n+sum(i,j),0,0);
+            }
+            if(j&lt;n)
+            {
+                road(m*n+sum(i,j),sum(i,j+1),1e18,0);
+                road(sum(i,j+1),m*n+sum(i,j),0,0);
+            }
+        }
     }
-    abc();
-    for(int i=1;i&lt;=n;++i)
+    road(s1,sum(1,1),q,0);
+    road(sum(1,1),s1,0,0);
+    road(m*n+sum(m,n),s2,q,0);
+    road(s2,m*n+sum(m,n),0,0);
+    ll r=0;
+    while(SPFA())
     {
-        printf(&quot;%d\n&quot;,h[g[i]]);
+        for(int i=1;i&lt;=s2;++i) 
+        {
+            t0[i]=t[i];
+            h[i]=false;
+        }
+        r+=dfs(s1,1e18);
+    }
+    for(int i=1;i&lt;=r;++i)
+    {
+        dfs0(sum(1,1),i);
     }
     return 0;
 }
@@ -751,7 +700,7 @@ int main()
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://2745518585.github.io/post/Aho-Corasick-automaton/" title="AC自动机">https://2745518585.github.io/post/Aho-Corasick-automaton/</a>
+      <a href="https://2745518585.github.io/post/p3356-huo-xing-tan-xian-wen-ti/" title="P3356 火星探险问题">https://2745518585.github.io/post/p3356-huo-xing-tan-xian-wen-ti/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -760,20 +709,24 @@ int main()
   </ul>
   <div class="tags">
     
-      <a href="https://2745518585.github.io/tag/String-algorithm/"># 字符串算法</a>
+      <a href="https://2745518585.github.io/tag/Network-flows/"># 网络流</a>
     
-      <a href="https://2745518585.github.io/tag/Aho-Corasick-automaton/"># AC自动机</a>
+      <a href="https://2745518585.github.io/tag/Minimum-cost-maximum-flow/"># 费用流</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
         <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="多重背包（单调队列优化）" href="https://2745518585.github.io/post/Monotone-queue-optimization-knapsack/">多重背包（单调队列优化）</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="多重背包（单调队列优化）" href="https://2745518585.github.io/post/Monotone-queue-optimization-knapsack/">上一篇</a>
+        <a class="nav-pc-next" title="四边形不等式优化线性dp" href="https://2745518585.github.io/post/Quadrilateral-inequality-optimization-linear-DP/">四边形不等式优化线性dp</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="四边形不等式优化线性dp" href="https://2745518585.github.io/post/Quadrilateral-inequality-optimization-linear-DP/">上一篇</a>
       
     </div>
     <div class="nav-next">
+      
+        <a class="nav-pc-next" title="费用流题单" href="https://2745518585.github.io/post/minimum-cost-maximum-flow-problemlist/">费用流题单</a>
+        <a class="nav-mobile-next" title="费用流题单" href="https://2745518585.github.io/post/minimum-cost-maximum-flow-problemlist/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
