@@ -3,8 +3,8 @@ title: '关于 Orita'
 date: 2023-02-01 17:00:00
 tags: [Orita]
 description: 'Useful OI Tools'
+top: true
 ---
-
 [Orita](https://github.com/2745518585/Orita) 是由 [赵悦岑](https://github.com/2745518585/) 开发的一款 OI 工具，包括评测、对拍、数据生成等，主要由 C++ 语言编写。
 
 目前 Dev 版本已经发布。
