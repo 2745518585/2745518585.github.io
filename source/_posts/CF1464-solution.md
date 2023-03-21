@@ -2,7 +2,7 @@
 title: 'Codeforces Round 692 (Div. 1, based on Technocup 2021 Elimination Round 3) A ~ C 题解'
 date: 2023-03-21 16:06:45
 tags: [CF]
-description: ''
+description: ' '
 ---
 
 ## A. Peaceful Rooks
