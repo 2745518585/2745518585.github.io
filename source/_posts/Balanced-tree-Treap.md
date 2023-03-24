@@ -159,7 +159,7 @@ int find_b(int x,int k)
     if(p==0) return T[x].k;
     return p;
 }
-``` 
+```
 ## Treap函数的调用
 我们总共学习了 $6$ 个 Treap 的相关函数。调用的时候我们需要调用 Treap 的根节点。由于 Treap 的形状在时刻变化，所以我们需要用一个变量 $r$ 来记录根节点，初始值为 $0$。
 ```cpp
@@ -183,7 +183,7 @@ int main()
 ```
 ## code
 ```cpp
-```#include<cstdio>
+#include<cstdio>
 #include<algorithm>
 #include<ctime>
 using namespace std;
