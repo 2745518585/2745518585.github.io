@@ -1,8 +1,8 @@
 ---
-title: 'NOI 春季测试 T4 密码锁题解'
+title: 'NOI 2023 春季测试 T4 密码锁题解'
 date: 2023-03-06 19:02:44
 tags: ''
-description: ' '
+description: 'NOI 2023 春季测试 T4 密码锁题解'
 ---
 
 ## 题意
