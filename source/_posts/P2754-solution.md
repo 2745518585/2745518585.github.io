@@ -3,6 +3,7 @@ title: 'P2754 [CTSC1999]家园 / 星际转移问题'
 date: 2022-04-16 18:36:23
 tags: [网络流,最大流]
 description: ' '
+alias: P2754-solution/index.html
 ---
 
 [P2754 [CTSC1999]家园 / 星际转移问题](https://www.luogu.com.cn/problem/P2754)

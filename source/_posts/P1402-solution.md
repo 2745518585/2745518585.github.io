@@ -3,6 +3,7 @@ title: 'P1402 酒店之王'
 date: 2022-04-16 19:30:44
 tags: [网络流,最大流]
 description: ' '
+alias: P1402-solution/index.html
 ---
 
 [P1402 酒店之王](https://www.luogu.com.cn/problem/P1402)

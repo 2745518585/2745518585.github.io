@@ -3,6 +3,7 @@ title: 'P3195 [HNOI2008]玩具装箱'
 date: 2022-04-04 09:32:41
 tags: [动态规划,单调队列,斜率优化dp]
 description: ' '
+alias: P3195-solution/index.html
 ---
 
 [P3195 [HNOI2008]玩具装箱](https://www.luogu.com.cn/problem/P3195)

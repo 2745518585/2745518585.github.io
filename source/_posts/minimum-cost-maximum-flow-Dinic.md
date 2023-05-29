@@ -3,6 +3,7 @@ title: '最小费用最大流Dinic'
 date: 2022-04-20 14:50:20
 tags: [网络流,费用流]
 description: ' '
+alias: minimum-cost-maximum-flow-Dinic/index.html
 ---
 
 ## 前言

@@ -3,6 +3,7 @@ title: '单调队列优化dp'
 date: 2022-04-03 21:09:16
 tags: [动态规划,单调队列,单调队列优化dp]
 description: ' '
+alias: Monotone-queue-dp/index.html
 ---
 
 ## 前言
