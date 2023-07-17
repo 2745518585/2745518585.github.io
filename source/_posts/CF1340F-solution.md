@@ -25,6 +25,7 @@ description: ' '
 
 ## code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -155,6 +156,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 
 

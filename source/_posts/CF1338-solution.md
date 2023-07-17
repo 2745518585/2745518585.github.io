@@ -19,6 +19,7 @@ $n \leq 10^5$
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -46,6 +47,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 ## B. Edge Weight Assignment
 
@@ -67,6 +69,7 @@ $3 \leq n \leq 10^5$
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -125,6 +128,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 ## C. Perfect Triples
 
@@ -138,6 +142,7 @@ $1 \leq n \leq 10^{16},t \leq 10^5$
 
 可以打表找规律。
 
+{% contentbox type:note title:note %}
 ```
 1 2 3
 4 8 12
@@ -161,6 +166,7 @@ $1 \leq n \leq 10^{16},t \leq 10^5$
 30 39 57
 31 37 58
 ```
+{% endcontentbox %}
 
 ### 解法
 
@@ -174,6 +180,7 @@ $1 \leq n \leq 10^{16},t \leq 10^5$
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -230,6 +237,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 ## D. Nested Rubber Bands
 
@@ -249,6 +257,7 @@ int main()
 
 设 $f_{x,0}$ 为 $x$ 不在独立集中子树的方案，$f_{x,1}$ 为 $x$ 在独立集中子树的答案，这里 $x$ 为选出的链的一个端点。转移时注意只能选一个子树转移，所以是子树取 $\max$，然后以这个点为链的转折点更新答案，更新时注意处理其他儿子即可。详见代码。
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -300,4 +309,5 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 

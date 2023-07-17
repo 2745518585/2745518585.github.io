@@ -19,6 +19,7 @@ $m \times n \leq 10^5$
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -79,6 +80,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 ## B. Integral Array
 
@@ -94,6 +96,7 @@ $n \leq 10^6,1 \leq a_i \leq 10^6$
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -135,6 +138,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 ## C. Tyler and Strings
 
@@ -152,6 +156,7 @@ $i$ 每向后移动一位，$a_{s_{i-1}}$ 都会减少 $1$，$w$ 和 $t$ 也会�
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -234,6 +239,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 ## D. Serious Business
 
@@ -249,6 +255,7 @@ int main()
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -377,4 +384,5 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 

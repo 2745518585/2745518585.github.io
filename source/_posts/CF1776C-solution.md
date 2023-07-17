@@ -19,6 +19,7 @@ description: 'SWERC 2022-2023 - Online Mirror (Unrated, ICPC Rules, Teams Prefer
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -104,6 +105,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 
 
