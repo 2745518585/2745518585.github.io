@@ -35,6 +35,7 @@ $$ans_t = ans_{t-1} - dis(S_{t-1},S_{t+1}) + dis(S_{t-1},S_t) + dis(S_t,S_{t+1})
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -141,4 +142,5 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 

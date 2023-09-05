@@ -19,6 +19,7 @@ $n \leq 7000,k \leq \frac{n(n+1)}{2}$
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -82,6 +83,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 ## B - Triple Pair
 
@@ -99,6 +101,7 @@ $n \leq 10^9$
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -143,6 +146,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 ## C - Power Up
 
@@ -164,6 +168,7 @@ $n \leq 2 \times 10^5, a_i \leq 2 \times 10^5$
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -213,3 +218,4 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}

@@ -19,6 +19,7 @@ $n \leq 10^5$
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -57,6 +58,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 ## B. Grime Zoo
 
@@ -78,6 +80,7 @@ $|S| \leq 10^5,0 \leq x,y \leq 10^6$
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -146,6 +149,7 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
 ## C. Poman Numbers
 
@@ -165,6 +169,7 @@ int main()
 
 ### code
 
+{% contentbox type:success title:code %}
 ```cpp
 #include<cstdio>
 #include<algorithm>
@@ -189,4 +194,5 @@ int main()
     return 0;
 }
 ```
+{% endcontentbox %}
 
