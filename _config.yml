@@ -115,6 +115,7 @@ deploy:
   type: git
   repo: git@github.com:2745518585/2745518585.github.io.git
   branch: main
+  proxy: http://127.0.0.1:10809
 
 sitemap:
   path: 
