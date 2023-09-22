@@ -1,0 +1,39 @@
+name: Build Blog
+
+on:
+  push:
+    branches:
+      - source
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+
+    - name: Install dependencies
+      run: |
+        npm install
+        npm install -g hexo
+
+    - name: Configure Git
+      run: |
+        git config --global user.name "${{ secrets.GH_USERNAME }}"
+        git config --global user.email "${{ secrets.GH_EMAIL }}"
+        mkdir -p ~/.ssh/
+        echo "${{ secrets.GH_SSH_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        git remote set-url origin git@github.com:${{ github.repository }}.git
+
+    - name: Generate
+      run: hexo g
+
+    - name: Deploy
+      run: hexo d
