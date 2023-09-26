@@ -1,5 +1,5 @@
 ---
-title: AtCoder Regular Contest 160 题解
+title: AtCoder Regular Contest 160 A-F 题解
 date: 2023-05-15 20:45:11
 tags: [AT]
 description: ' '
