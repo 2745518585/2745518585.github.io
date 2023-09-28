@@ -32,6 +32,9 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         git remote set-url origin git@github.com:${{ github.repository }}.git
 
+    - name: Pull
+      run: git pull
+
     - name: Generate
       run: hexo g
 
