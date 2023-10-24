@@ -143,3 +143,14 @@ content_blocks:
     bug: "#f50057 || fa fa-bug"
     example: "#7c4dff || fa fa-vial"
     quote: "#9e9e9e || fa fa-quote-right"
+
+post_replace:
+  before:
+    'sgc': '[sgc](https://sukwants.pond.ink/)'
+    'sxg': '[sxg](https://song-gan.github.io/)'
+    'zc': '[zc](https://www.cnblogs.com/Feyn/)'
+    'Feyn': '[Feyn](https://www.cnblogs.com/Feyn/)'
+    'zsq': '[zsq](https://wtyakioi.github.io/)'
+    'zlx': '[zlx](https://blog.zlx.pw/)'
+    'syy': '[syy](https://syy.pond.ink)'
+    'lyh': '[lyh](https://star-32.github.io/)'

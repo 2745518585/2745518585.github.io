@@ -15,11 +15,11 @@ AFO
 
 迫真绵阳 5 日游。
 
-每天都是早上起来就去 [sgc](https://sukwants.github.io/) 和 [syy](https://www.luogu.com.cn/blog/snowbamboo/) 的房间 219 做联考题，然后一个同学会了，大家都会了。
+每天都是早上起来就去 sgc 和 syy 的房间 219 做联考题，然后一个同学会了，大家都会了。
 
 中午吃饭之后找了个餐桌打乒乓。下午基本就是各种颓，ygg 也不组织讨论，一直颓到晚上。晚上就有五六个人待在 219，边颓边看世界杯，还有两天晚上点了外卖。
 
-后来 [sgc](https://sukwants.github.io/) 开始放各种 WC 才艺展示，然后大家都开始听，直接投屏到电视上放《我的一个 OIer 朋友》。估计考场上要单曲循环了。
+后来 sgc 开始放各种 WC 才艺展示，然后大家都开始听，直接投屏到电视上放《我的一个 OIer 朋友》。估计考场上要单曲循环了。
 
 ## Day 1 上午
 
@@ -39,13 +39,13 @@ T2 $k=2n-1$ 的情况只需要多处理多出来的那一个数 $k$，假设 $k$
 
 ## Day 1 下午
 
-一问各个巨佬，都考的比我高。ljy 和季老师大概是 300+，剩下的 1 队也基本 200+，但是看到 yl 在校门口快哭了，默哀。2 队的 [zc](https://www.cnblogs.com/Feyn/) 切了 T3，[lyh](https://www.luogu.com.cn/blog/AIQ/) 大暴力凑了个 200+，%%%。剩下的貌似我最高，但是拿头进省选。
+一问各个巨佬，都考的比我高。ljy 和季老师大概是 300+，剩下的 1 队也基本 200+，但是看到 yl 在校门口快哭了，默哀。2 队的 zc 切了 T3，lyh 大暴力凑了个 200+，%%%。剩下的貌似我最高，但是拿头进省选。
 
 ## Day 2 $\sim$ 4
 
-从绵阳回来还是要居家隔离 3 天，去了 [sgc](https://sukwants.github.io/) 家划水，大概就是天天打 generals.io，再搞点奇妙的技术问题。由于 [zsq](https://wtyakioi.github.io/) 和 syy 住的很近，还来一起耍了。
+从绵阳回来还是要居家隔离 3 天，去了 sgc 家划水，大概就是天天打 generals.io，再搞点奇妙的技术问题。由于 zsq 和 syy 住的很近，还来一起耍了。
 
-luogu、infOJ、小图灵都出分了。我引用一下 [zc](https://www.cnblogs.com/Feyn/) 博客里小图灵的统计：
+luogu、infOJ、小图灵都出分了。我引用一下 zc 博客里小图灵的统计：
 
 > zzh299，ljy220，zyt123，xby280，llt280，shr183，yxr86，wzx179，zlx240，cs270，syy76，swc240，zyc170，sgc115，zym200，zsq87，yl29，hyy195，lyh209
 
