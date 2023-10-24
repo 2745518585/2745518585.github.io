@@ -47,3 +47,20 @@ T4 开题就发现如果确定了结束时间，那么每棵树所需的生长�
 > [关于部分平台私自发布CSP-J/S 2023认证结果的公告](https://www.noi.cn/xw/2023-10-23/796608.shtml)
 
 樂，CCF 恼羞成怒。
+
+过了两天又有小周老师新文。
+
+> [23年提高组题解](https://mp.weixin.qq.com/s?__biz=MzIwMzcxMTY4OQ==&mid=2247485279&idx=1&sn=8e946a1dbf097603d7fe999f98d52a88&chksm=96ca72f9a1bdfbef6db370b669792513234dadd960198d8bff451bb8b0cd35bb001cb5ef6e69&mpshare=1&scene=23&srcid=1024wxs9ddTvySY1xAZQz7gO&sharer_shareinfo=2a2f8c1b00d1aaa6ddaa9b3d5b5efffb&sharer_shareinfo_first=2a2f8c1b00d1aaa6ddaa9b3d5b5efffb#rd)
+
+> 5- 退役战，APIO获得银牌，排名100，成绩远超曾经上海赛区NOIP排名第一的同学。
+
+> 【小周老师注：一定要赞美CCF啊同学们！】
+
+> 但我并不认为CCF以后会继续朝着OOP或者软件工程靠近，毕竟，NOIP存在的意义，是为了选出4名国手参加IOI，算法优秀就行了，其他的回头再说。
+
+樂
+
+至于这个 “谦哥”，这简历详细的，属于是无效打码了。甚至高二没进省队还在打 APIO，不好评价。
+
+![1](/post-images/csp-s-2023-travels-1.png?300x)
+
