@@ -69,3 +69,7 @@ T4 开题就发现如果确定了结束时间，那么每棵树所需的生长�
 😭😭😭晚上被 ygg 抓到 UB 了，T2 摸了数组下标 $-1$，在 dev 上要 RE😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭😭。有的同学喜欢写 UB，评价是不如原神。
 
 以后测试必加 `-fsanitize=undefined`。
+
+30 号晚上查分，传统艺能 `https://cspsjtest.noi.cn/page/compStudent/resultStudent.php?compID=83`。没挂。
+
+不知道有没有群 u 冲申诉加 100 分的。
