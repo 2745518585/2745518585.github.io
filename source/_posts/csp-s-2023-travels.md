@@ -73,3 +73,7 @@ T4 开题就发现如果确定了结束时间，那么每棵树所需的生长�
 30 号晚上查分，传统艺能 `https://cspsjtest.noi.cn/page/compStudent/resultStudent.php?compID=83`。没挂。
 
 不知道有没有群 u 冲申诉加 100 分的。
+
+20 号才出榜，甚至在 NOIP 之后，多少沾点。
+
+19 号下午居然就出榜了！CCF 提前了整整半天发榜，可喜可贺！
