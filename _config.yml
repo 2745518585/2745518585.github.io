@@ -146,11 +146,12 @@ content_blocks:
 
 post_replace:
   before:
-    'sgc': '[sgc](https://sukwants.pond.ink/)'
-    'sxg': '[sxg](https://song-gan.github.io/)'
-    'zc': '[zc](https://www.cnblogs.com/Feyn/)'
-    'Feyn': '[Feyn](https://www.cnblogs.com/Feyn/)'
-    'zsq': '[zsq](https://wtyakioi.github.io/)'
-    'zlx': '[zlx](https://blog.zlx.pw/)'
-    'syy': '[syy](https://syy.pond.ink)'
-    'lyh': '[lyh](https://star-32.github.io/)'
+    '@Feyn': '[Feyn](https://www.cnblogs.com/Feyn/)'
+    '@lyh': '[lyh](https://star-32.github.io/)'
+    '@sgc': '[sgc](https://sukwants.pond.ink/)'
+    '@suk': '[suk](https://sukwants.pond.ink/)'
+    '@sxg': '[sxg](https://song-gan.github.io/)'
+    '@syy': '[syy](https://syy.pond.ink)'
+    '@zc': '[zc](https://www.cnblogs.com/Feyn/)'
+    '@zsq': '[zsq](https://wtyakioi.github.io/)'
+    '@zlx': '[zlx](https://blog.zlx.pw/)'
