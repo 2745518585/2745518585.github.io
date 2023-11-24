@@ -52,3 +52,11 @@ luogu 和 xtl 都出了，没挂。
 居然是 luogu NOIP 榜 rk1，粉丝数 +++++，这不狠狠地打波[广告](https://www.luogu.com.cn/user/291248)。
 
 晚上帮 @syy 打 CF 上分，结果 Div.2 一个小时只过 4 道，C 和 D 都狠狠地把自己撅了，大概就是 “写成这批样怎么过的样例啊”，不过还是小上了一点分。
+
+11-24 晚上居然就可以查了，传统艺能 [link](https://cspsjtest.noi.cn/page/compStudent/resultStudent.php?compID=85)，没挂。
+
+过了半个小时居然修了，CCF 居然修锅了，可喜可贺。
+
+![1](/post-images/noip-2023-travels-1.png?300x)
+
+然后群里一看申诉还是可以查，绷不住了。
