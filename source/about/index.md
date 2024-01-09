@@ -4,6 +4,8 @@ date: 2023-03-15 11:25:19
 ---
 cdqz 2022 级 OIer 。
 
+博客源码位于仓库 `source` 分支下: [link](https://github.com/2745518585/2745518585.github.io/tree/source).
+
 本项目由 [Sukwants](https://github.com/Sukwants)、[Pond Ink](https://github.com/Pond-Ink) 团队和 [syysongyuyang](https://github.com/syysongyuyang) 提供技术支持。
 
 [![0](https://avatars.githubusercontent.com/u/95968907?s=64&v=4)](https://github.com/Sukwants)
