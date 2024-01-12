@@ -1,4 +1,5 @@
 {%- if page.comments %}
+  <div class="comments giscus"></div>
   <script src="https://giscus.app/client.js"
           data-repo="2745518585/2745518585.github.io"
           data-repo-id="R_kgDOIhHJaA"
@@ -14,6 +15,7 @@
           crossorigin="anonymous"
           async>
   </script>
+  <style>.giscus{width:initial}</style>
   {%- if theme.injects.comment.length == 1 %}
     {%- set inject_item = theme.injects.comment[0] %}
     {{ partial(inject_item.layout, inject_item.locals, inject_item.options) }}
