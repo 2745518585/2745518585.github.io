@@ -5,7 +5,7 @@ tags: [游记]
 description: ' '
 ---
 
-省流：@zsq Day2 切穿 218 分成功登顶。
+省流：@zsq Day2 切穿 $218$ 分成功登顶。
 
 ## Day $-6 \sim -4$
 
