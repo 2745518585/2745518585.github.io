@@ -95,3 +95,42 @@ $l$ 限制转为区间查，对 $r$ 分块。注意到一个区间构成的森�
 每次按最小值分治。
 
 #### [QOJ5171](https://qoj.ac/problem/5171) 理论出线
+
+
+#### [QOJ5305](https://qoj.ac/problem/5305) Oscar is All You Need
+
+分类讨论。
+
+注意到可以通过 $op(i,2),op(1,i)$ 将末尾数移至第 $i$ 个数后，考虑每次将插入到前面来排序。由于每段非空，显然不能将通过这种方法交换最后两个数，需特殊考虑。
+
+#### [QOJ5308](https://qoj.ac/problem/5308) RPG Pro League
+
+左边四个点分别代表一队中 $4$ 个位置，右边 $7$ 个点表示玩家类型，求出最多多少组对于左部点的完美匹配。考虑完美匹配的判断：Hall 定理（$\forall S \subseteq X,|N(S)| \ge |S|$），那么能拆分出的完美匹配组数就是 $\min(\frac{|N(S)|}{S}),S \subseteq X$。
+
+考虑修改，显然加入/删除 $x$ 后最多只会删除/加入一个人，且这个人为所属类型集合中最大值/集合外最小值，枚举即可。
+
+#### [QOJ5309](https://qoj.ac/problem/5309) Guess Cycle Length
+
+根号做法显然。考虑查询得到的编号一定在 $1$ 到 $n$ 之间，可以通过随机查询一些位置来得到一个较大的下限，然后使用根号做法即可。
+
+#### [QOJ5312](https://qoj.ac/problem/5312) Levenshtein Distance
+
+记 $f_{i,j}$ 表示 $S_{1,x}$ 与 $T_{1,x+j}$ 距离为 $i$，$x$ 最大值，ST 表维护 $\text{LCP}(S_{x,|S|},T_{y,|T|})$，对于 $T$ 每个起始位置 $k^2$ 转移一次即可。
+
+#### [QOJ5418](https://qoj.ac/problem/5418) Color the Tree
+
+法 1：考虑每层分开考虑，对当前层的所有点建虚树后可 dp。
+
+法 2：$f_{x,i}$ 表示 $x$ 子树中第 $i$ 层全部染色的代价，长链剖分可做。
+
+#### [QOJ5421](https://qoj.ac/problem/5421) Factories Once More
+
+记 $f_{x,i}$ 表示 $x$ 子树中选了 $i$ 个点的最大值，转移 $f_{x,i} = \max(f_{x,i-j}+f_{y,j}+w j (k-j))$，注意到 $f$ 是上凸函数（上凸函数的 $(\max,+)$ 卷积仍为上凸函数）。考虑维护单调的差分数组，$(\max,+)$ 卷积为合并两个差分数组，$f_{x,i} \rightarrow f_{x,i+1}$ 即在最高点插入一个 $0$，平衡数启发式合并维护。
+
+#### [CF1768F](https://www.luogu.com.cn/problem/CF1768F) Wonderful Jump
+
+如果有 $a_k \le a_i,a_j$，显然 $i \rightarrow k,k \rightarrow j$ 优于 $i \rightarrow j$。即每一步转移区间最小值均在两端。
+
+考虑对每个 $i$ 以 $a_i$ 为最小值向前、向后转移。注意到代价是一次跳过的长度的平方，可以考虑用上界限制转移范围，容易发现长度大于 $\frac{n}{a_i}$ 时一定劣于一步一步跳。
+
+易证复杂度 $O(n \sqrt{n})$。
