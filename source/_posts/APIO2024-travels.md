@@ -45,7 +45,7 @@ description: ' '
 
 讲课没去听，按去年惯例是不允许说做法然后变成国家队吹牛。结果这次好像讲了，T2 好像有决策单调性，T3 好像是 CRT，感觉都好正确。
 
-![1](/post-images/APIO2023-travels-1.png)
+![1](/post-images/APIO2024-travels-1.png)
 
 高举厕所牌。
 
