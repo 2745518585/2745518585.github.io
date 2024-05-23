@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="true">
+  <meta name="msvalidate.01" content="true">
+  <meta name="yandex-verification" content="true">
+  <meta name="baidu-site-verification" content="true">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zyc.pond.ink","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+  <style type="text/css">
+
+div.hcb-content.hcb-block.hcbnote, details.hcb-content.box.hcbnote,div.hcb-content.hcb-block.hcbabstract, details.hcb-content.box.hcbabstract,div.hcb-content.hcb-block.hcbinfo, details.hcb-content.box.hcbinfo,div.hcb-content.hcb-block.hcbtip, details.hcb-content.box.hcbtip,div.hcb-content.hcb-block.hcbsuccess, details.hcb-content.box.hcbsuccess,div.hcb-content.hcb-block.hcbquestion, details.hcb-content.box.hcbquestion,div.hcb-content.hcb-block.hcbwarning, details.hcb-content.box.hcbwarning,div.hcb-content.hcb-block.hcbfailure, details.hcb-content.box.hcbfailure,div.hcb-content.hcb-block.hcbdanger, details.hcb-content.box.hcbdanger,div.hcb-content.hcb-block.hcbbug, details.hcb-content.box.hcbbug,div.hcb-content.hcb-block.hcbexample, details.hcb-content.box.hcbexample,div.hcb-content.hcb-block.hcbquote, details.hcb-content.box.hcbquote {
+  border: .05rem solid #448aff;
+  border-radius: .2rem;
+  font-size: 0.96rem;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  transition: box-shadow 250ms;
+}
+div.hcb-content.hcb-block.hcbnote, details.hcb-content.box.hcbnote {
+  border-color: #448aff;
+}
+div.hcb-content.hcb-block.hcbabstract, details.hcb-content.box.hcbabstract {
+  border-color: #00b0ff;
+}
+div.hcb-content.hcb-block.hcbinfo, details.hcb-content.box.hcbinfo {
+  border-color: #00b8d4;
+}
+div.hcb-content.hcb-block.hcbtip, details.hcb-content.box.hcbtip {
+  border-color: #00bfa5;
+}
+div.hcb-content.hcb-block.hcbsuccess, details.hcb-content.box.hcbsuccess {
+  border-color: #00c853;
+}
+div.hcb-content.hcb-block.hcbquestion, details.hcb-content.box.hcbquestion {
+  border-color: #64dd17;
+}
+div.hcb-content.hcb-block.hcbwarning, details.hcb-content.box.hcbwarning {
+  border-color: #ff9100;
+}
+div.hcb-content.hcb-block.hcbfailure, details.hcb-content.box.hcbfailure {
+  border-color: #ff5252;
+}
+div.hcb-content.hcb-block.hcbdanger, details.hcb-content.box.hcbdanger {
+  border-color: #ff1744;
+}
+div.hcb-content.hcb-block.hcbbug, details.hcb-content.box.hcbbug {
+  border-color: #f50057;
+}
+div.hcb-content.hcb-block.hcbexample, details.hcb-content.box.hcbexample {
+  border-color: #7c4dff;
+}
+div.hcb-content.hcb-block.hcbquote, details.hcb-content.box.hcbquote {
+  border-color: #9e9e9e;
+}
+div.hcb-content.hcb-block.hcbnote:focus-within, details.hcb-content.box.hcbnote:focus-within {
+  box-shadow: 0 0 0 .2rem #448aff1a;
+}
+div.hcb-content.hcb-block.hcbabstract:focus-within, details.hcb-content.box.hcbabstract:focus-within {
+  box-shadow: 0 0 0 .2rem #00b0ff1a;
+}
+div.hcb-content.hcb-block.hcbinfo:focus-within, details.hcb-content.box.hcbinfo:focus-within {
+  box-shadow: 0 0 0 .2rem #00b8d41a;
+}
+div.hcb-content.hcb-block.hcbtip:focus-within, details.hcb-content.box.hcbtip:focus-within {
+  box-shadow: 0 0 0 .2rem #00bfa51a;
+}
+div.hcb-content.hcb-block.hcbsuccess:focus-within, details.hcb-content.box.hcbsuccess:focus-within {
+  box-shadow: 0 0 0 .2rem #00c8531a;
+}
+div.hcb-content.hcb-block.hcbquestion:focus-within, details.hcb-content.box.hcbquestion:focus-within {
+  box-shadow: 0 0 0 .2rem #64dd171a;
+}
+div.hcb-content.hcb-block.hcbwarning:focus-within, details.hcb-content.box.hcbwarning:focus-within {
+  box-shadow: 0 0 0 .2rem #ff91001a;
+}
+div.hcb-content.hcb-block.hcbfailure:focus-within, details.hcb-content.box.hcbfailure:focus-within {
+  box-shadow: 0 0 0 .2rem #ff52521a;
+}
+div.hcb-content.hcb-block.hcbdanger:focus-within, details.hcb-content.box.hcbdanger:focus-within {
+  box-shadow: 0 0 0 .2rem #ff17441a;
+}
+div.hcb-content.hcb-block.hcbbug:focus-within, details.hcb-content.box.hcbbug:focus-within {
+  box-shadow: 0 0 0 .2rem #f500571a;
+}
+div.hcb-content.hcb-block.hcbexample:focus-within, details.hcb-content.box.hcbexample:focus-within {
+  box-shadow: 0 0 0 .2rem #7c4dff1a;
+}
+div.hcb-content.hcb-block.hcbquote:focus-within, details.hcb-content.box.hcbquote:focus-within {
+  box-shadow: 0 0 0 .2rem #9e9e9e1a;
+}
+div.hcb-content.hcb-block.hcbnote *, details.hcb-content.box.hcbnote *,div.hcb-content.hcb-block.hcbabstract *, details.hcb-content.box.hcbabstract *,div.hcb-content.hcb-block.hcbinfo *, details.hcb-content.box.hcbinfo *,div.hcb-content.hcb-block.hcbtip *, details.hcb-content.box.hcbtip *,div.hcb-content.hcb-block.hcbsuccess *, details.hcb-content.box.hcbsuccess *,div.hcb-content.hcb-block.hcbquestion *, details.hcb-content.box.hcbquestion *,div.hcb-content.hcb-block.hcbwarning *, details.hcb-content.box.hcbwarning *,div.hcb-content.hcb-block.hcbfailure *, details.hcb-content.box.hcbfailure *,div.hcb-content.hcb-block.hcbdanger *, details.hcb-content.box.hcbdanger *,div.hcb-content.hcb-block.hcbbug *, details.hcb-content.box.hcbbug *,div.hcb-content.hcb-block.hcbexample *, details.hcb-content.box.hcbexample *,div.hcb-content.hcb-block.hcbquote *, details.hcb-content.box.hcbquote * {
+  box-sizing: border-box;
+}
+div.hcb-content.hcb-block.hcbnote > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbnote > summary,div.hcb-content.hcb-block.hcbabstract > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbabstract > summary,div.hcb-content.hcb-block.hcbinfo > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbinfo > summary,div.hcb-content.hcb-block.hcbtip > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbtip > summary,div.hcb-content.hcb-block.hcbsuccess > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbsuccess > summary,div.hcb-content.hcb-block.hcbquestion > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbquestion > summary,div.hcb-content.hcb-block.hcbwarning > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbwarning > summary,div.hcb-content.hcb-block.hcbfailure > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbfailure > summary,div.hcb-content.hcb-block.hcbdanger > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbdanger > summary,div.hcb-content.hcb-block.hcbbug > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbbug > summary,div.hcb-content.hcb-block.hcbexample > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbexample > summary,div.hcb-content.hcb-block.hcbquote > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbquote > summary {
+  border-top-right-radius: 0.1rem;
+  border-top-left-radius: 0.1rem;
+  border-left-width: 0.2rem;
+  display: block;
+  min-height: 1rem;
+  border: none;
+  font-weight: 700;
+  margin: 0 -1.2rem 1rem;
+  padding: 0.4rem 0.6rem;
+  position: relative;
+  outline: none;
+}
+details.hcb-content.box.hcbnote > summary,details.hcb-content.box.hcbabstract > summary,details.hcb-content.box.hcbinfo > summary,details.hcb-content.box.hcbtip > summary,details.hcb-content.box.hcbsuccess > summary,details.hcb-content.box.hcbquestion > summary,details.hcb-content.box.hcbwarning > summary,details.hcb-content.box.hcbfailure > summary,details.hcb-content.box.hcbdanger > summary,details.hcb-content.box.hcbbug > summary,details.hcb-content.box.hcbexample > summary,details.hcb-content.box.hcbquote > summary {
+  cursor: pointer;
+}
+details.hcb-content.box.hcbnote:not([open]) > summary,details.hcb-content.box.hcbabstract:not([open]) > summary,details.hcb-content.box.hcbinfo:not([open]) > summary,details.hcb-content.box.hcbtip:not([open]) > summary,details.hcb-content.box.hcbsuccess:not([open]) > summary,details.hcb-content.box.hcbquestion:not([open]) > summary,details.hcb-content.box.hcbwarning:not([open]) > summary,details.hcb-content.box.hcbfailure:not([open]) > summary,details.hcb-content.box.hcbdanger:not([open]) > summary,details.hcb-content.box.hcbbug:not([open]) > summary,details.hcb-content.box.hcbexample:not([open]) > summary,details.hcb-content.box.hcbquote:not([open]) > summary {
+  margin-bottom: 0;
+}
+div.hcb-content.hcb-block.hcbnote > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbnote > summary {
+  background-color: #448aff1a;
+}
+div.hcb-content.hcb-block.hcbabstract > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbabstract > summary {
+  background-color: #00b0ff1a;
+}
+div.hcb-content.hcb-block.hcbinfo > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbinfo > summary {
+  background-color: #00b8d41a;
+}
+div.hcb-content.hcb-block.hcbtip > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbtip > summary {
+  background-color: #00bfa51a;
+}
+div.hcb-content.hcb-block.hcbsuccess > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbsuccess > summary {
+  background-color: #00c8531a;
+}
+div.hcb-content.hcb-block.hcbquestion > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbquestion > summary {
+  background-color: #64dd171a;
+}
+div.hcb-content.hcb-block.hcbwarning > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbwarning > summary {
+  background-color: #ff91001a;
+}
+div.hcb-content.hcb-block.hcbfailure > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbfailure > summary {
+  background-color: #ff52521a;
+}
+div.hcb-content.hcb-block.hcbdanger > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbdanger > summary {
+  background-color: #ff17441a;
+}
+div.hcb-content.hcb-block.hcbbug > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbbug > summary {
+  background-color: #f500571a;
+}
+div.hcb-content.hcb-block.hcbexample > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbexample > summary {
+  background-color: #7c4dff1a;
+}
+div.hcb-content.hcb-block.hcbquote > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbquote > summary {
+  background-color: #9e9e9e1a;
+}
+div.hcb-content.hcb-block.hcbnote > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbnote > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #448aff;
+}
+div.hcb-content.hcb-block.hcbabstract > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbabstract > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #00b0ff;
+}
+div.hcb-content.hcb-block.hcbinfo > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbinfo > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #00b8d4;
+}
+div.hcb-content.hcb-block.hcbtip > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbtip > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #00bfa5;
+}
+div.hcb-content.hcb-block.hcbsuccess > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbsuccess > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #00c853;
+}
+div.hcb-content.hcb-block.hcbquestion > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbquestion > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #64dd17;
+}
+div.hcb-content.hcb-block.hcbwarning > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbwarning > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #ff9100;
+}
+div.hcb-content.hcb-block.hcbfailure > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbfailure > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #ff5252;
+}
+div.hcb-content.hcb-block.hcbdanger > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbdanger > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #ff1744;
+}
+div.hcb-content.hcb-block.hcbbug > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbbug > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #f50057;
+}
+div.hcb-content.hcb-block.hcbexample > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbexample > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #7c4dff;
+}
+div.hcb-content.hcb-block.hcbquote > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbquote > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #9e9e9e;
+}
+details.hcb-content.box.hcbnote > summary > div.hcb-box-open-button,details.hcb-content.box.hcbabstract > summary > div.hcb-box-open-button,details.hcb-content.box.hcbinfo > summary > div.hcb-box-open-button,details.hcb-content.box.hcbtip > summary > div.hcb-box-open-button,details.hcb-content.box.hcbsuccess > summary > div.hcb-box-open-button,details.hcb-content.box.hcbquestion > summary > div.hcb-box-open-button,details.hcb-content.box.hcbwarning > summary > div.hcb-box-open-button,details.hcb-content.box.hcbfailure > summary > div.hcb-box-open-button,details.hcb-content.box.hcbdanger > summary > div.hcb-box-open-button,details.hcb-content.box.hcbbug > summary > div.hcb-box-open-button,details.hcb-content.box.hcbexample > summary > div.hcb-box-open-button,details.hcb-content.box.hcbquote > summary > div.hcb-box-open-button {
+  float: right;
+}
+details.hcb-content.box.hcbnote > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbabstract > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbinfo > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbtip > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbsuccess > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbquestion > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbwarning > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbfailure > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbdanger > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbbug > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbexample > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbquote > summary > div.hcb-box-open-button > i {
+  margin: 0 0.6rem 0 0.6rem;
+  font-size: 0.7rem;
+  transition: transform 250ms
+}
+details.hcb-content.box.hcbnote:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbabstract:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbinfo:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbtip:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbsuccess:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbquestion:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbwarning:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbfailure:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbdanger:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbbug:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbexample:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbquote:not([open]) > summary > div.hcb-box-open-button i {
+  transform: rotate(270deg);
+}
+details.hcb-content.box.hcbnote[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbabstract[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbinfo[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbtip[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbsuccess[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbquestion[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbwarning[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbfailure[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbdanger[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbbug[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbexample[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbquote[open] > summary > div.hcb-box-open-button i {
+  transform: rotate(180deg);
+}
+details.hcb-content.box.hcbnote summary div.hcb-box-open-button i {
+  color: #448aff;
+}
+details.hcb-content.box.hcbabstract summary div.hcb-box-open-button i {
+  color: #00b0ff;
+}
+details.hcb-content.box.hcbinfo summary div.hcb-box-open-button i {
+  color: #00b8d4;
+}
+details.hcb-content.box.hcbtip summary div.hcb-box-open-button i {
+  color: #00bfa5;
+}
+details.hcb-content.box.hcbsuccess summary div.hcb-box-open-button i {
+  color: #00c853;
+}
+details.hcb-content.box.hcbquestion summary div.hcb-box-open-button i {
+  color: #64dd17;
+}
+details.hcb-content.box.hcbwarning summary div.hcb-box-open-button i {
+  color: #ff9100;
+}
+details.hcb-content.box.hcbfailure summary div.hcb-box-open-button i {
+  color: #ff5252;
+}
+details.hcb-content.box.hcbdanger summary div.hcb-box-open-button i {
+  color: #ff1744;
+}
+details.hcb-content.box.hcbbug summary div.hcb-box-open-button i {
+  color: #f50057;
+}
+details.hcb-content.box.hcbexample summary div.hcb-box-open-button i {
+  color: #7c4dff;
+}
+details.hcb-content.box.hcbquote summary div.hcb-box-open-button i {
+  color: #9e9e9e;
+}
+div.hcb-content.hcb-cards * {
+  box-sizing: border-box;
+}
+input.hcb-content.hcb-cards-input {
+  display: none;
+}
+div.hcb-content.hcb-cards-labels {
+  position: relative;
+  box-shadow: 0 -0.05rem #00000012 inset;
+  display: flex;
+  margin-bottom: 1.25rem;
+}
+div.hcb-content.hcb-cards-labels:before {
+  background: var(--cards-color);
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transform: translateX(var(--md-indicator-x));
+  transition: width 225ms, transform 250ms;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  width: var(--md-indicator-width);
+}
+label.hcb-content.hcb-cards-label {
+  border-bottom: 0.1rem solid #0000;
+  border-radius: 0.1rem 0.1rem 0 0;
+  cursor: pointer;
+  color: #0000008a;
+  font-size: 0.92em;
+  font-weight: 700;
+  padding: 0 1.25rem 0.625rem;
+  transition: color 250ms;
+}
+label.hcb-content.hcb-cards-label.active, label.hcb-content.hcb-cards-label:hover {
+  color: var(--cards-color);
+}
+div.hcb-content.hcb-cards-content {
+  display: none;
+}
+div.hcb-content.hcb-cards-content.active {
+  display: block;
+}
+</style>
+    <meta property="og:type" content="article">
+<meta property="og:title" content="杂题.md">
+<meta property="og:url" content="https://zyc.pond.ink/post/mess/index.html">
+<meta property="og:site_name" content="赵悦岑&#39;s Blog - 赵悦岑的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-05-23T02:20:08.599Z">
+<meta property="article:author" content="赵悦岑">
+<meta property="article:tag" content="杂题">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://zyc.pond.ink/post/mess/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zyc.pond.ink/post/mess/","path":"post/mess/","title":"杂题.md"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>杂题.md | 赵悦岑's Blog - 赵悦岑的博客</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RW613KZRR0"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-RW613KZRR0","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?f623bfe6371855c32564aec835255495"></script>
+
+
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "d2p2fosm33");
+</script>
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">赵悦岑's Blog - 赵悦岑的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">赵悦岑's Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-mirrors"><a href="/mirrors/" rel="section"><i class="fa fa-copy fa-fw"></i>镜像</a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-book fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ6-%E7%8E%9B%E9%87%8C%E8%8B%9F%E6%96%AF"><span class="nav-text">QOJ6 玛里苟斯</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P6837-QOJ1138-Counting-Mushrooms"><span class="nav-text">P6837 QOJ1138 Counting Mushrooms</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ1430-Ineq"><span class="nav-text">QOJ1430 Ineq</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P8985-QOJ3270-%E9%AD%94%E5%A1%94-OL"><span class="nav-text">P8985 QOJ3270 魔塔 OL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P8987-QOJ3272-%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">P8987 QOJ3272 简单数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ4303-New-Level"><span class="nav-text">QOJ4303 New Level</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ4891-%E6%A0%91%E4%B8%8A%E7%9A%84%E5%AD%A4%E7%8B%AC"><span class="nav-text">QOJ4891 树上的孤独</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ4895-Lovely-Dogs"><span class="nav-text">QOJ4895 Lovely Dogs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P9055-QOJ4900-%E6%95%B0%E5%88%97%E9%87%8D%E6%8E%92"><span class="nav-text">P9055 QOJ4900 数列重排</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ4906-%E7%90%83%E7%90%83"><span class="nav-text">QOJ4906 球球</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ4909-%E3%80%8A%E5%85%B3%E4%BA%8E%E5%9B%A0%E4%B8%BA%E4%B8%8E%E5%8E%BB%E5%B9%B4%E4%BA%92%E6%B5%8Bzjk%E6%92%9E%E9%A2%98%E8%80%8C%E4%B8%8D%E5%BE%97%E4%B8%8D%E6%94%B9%E9%A2%98%E8%BF%99%E5%9B%9E%E4%BA%8B%E3%80%8B"><span class="nav-text">QOJ4909 《关于因为与去年互测zjk撞题而不得不改题这回事》</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ4914-Slight-Hope"><span class="nav-text">QOJ4914 Slight Hope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ4924-%E8%9C%98%E8%9B%9B%E7%88%AC%E6%A0%91"><span class="nav-text">QOJ4924 蜘蛛爬树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5040-Dirichlet-k-th-root"><span class="nav-text">QOJ5040 Dirichlet $k$-th root</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5047-Permutation"><span class="nav-text">QOJ5047 Permutation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5171-%E7%90%86%E8%AE%BA%E5%87%BA%E7%BA%BF"><span class="nav-text">QOJ5171 理论出线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5305-Oscar-is-All-You-Need"><span class="nav-text">QOJ5305 Oscar is All You Need</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5308-RPG-Pro-League"><span class="nav-text">QOJ5308 RPG Pro League</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5309-Guess-Cycle-Length"><span class="nav-text">QOJ5309 Guess Cycle Length</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5312-Levenshtein-Distance"><span class="nav-text">QOJ5312 Levenshtein Distance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5418-Color-the-Tree"><span class="nav-text">QOJ5418 Color the Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5421-Factories-Once-More"><span class="nav-text">QOJ5421 Factories Once More</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5423-Perfect-Matching"><span class="nav-text">QOJ5423 Perfect Matching</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5425-Proposition-Composition"><span class="nav-text">QOJ5425 Proposition Composition</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5519-Count-Hamiltonian-Cycles"><span class="nav-text">QOJ5519 Count Hamiltonian Cycles</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5523-Graph-Problem-With-Small-n"><span class="nav-text">QOJ5523 Graph Problem With Small $n$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ5528-Least-Annoying-Constructive-Problem"><span class="nav-text">QOJ5528  Least Annoying Constructive Problem</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ6308-Magic"><span class="nav-text">QOJ6308 Magic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ6501-Graph-Partitioning"><span class="nav-text">QOJ6501 Graph Partitioning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ6837-AC-Automaton"><span class="nav-text">QOJ6837 AC Automaton</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ6842-Popcount-Words"><span class="nav-text">QOJ6842 Popcount Words</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ6846-Wiring-Engineering"><span class="nav-text">QOJ6846 Wiring Engineering</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#P9061-QOJ7436-Optimal-Ordered-Problem-Solver"><span class="nav-text">P9061 QOJ7436 Optimal Ordered Problem Solver</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ7736-Red-Black-Tree"><span class="nav-text">QOJ7736 Red Black Tree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QOJ8343-%E7%8E%A9%E6%B8%B8%E6%88%8F"><span class="nav-text">QOJ8343 玩游戏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CF1768F-Wonderful-Jump"><span class="nav-text">CF1768F Wonderful Jump</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CF1868D-Flower-like-Pseudotree"><span class="nav-text">CF1868D Flower-like Pseudotree</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CF1728F-Fishermen"><span class="nav-text">CF1728F Fishermen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UOJ883-%E6%99%AF%E7%82%B9%E8%A7%82%E5%85%89"><span class="nav-text">UOJ883 景点观光</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CF429E-Points-and-Segments"><span class="nav-text">CF429E Points and Segments</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CF1973F-Maximum-GCD-Sum-Queries"><span class="nav-text">CF1973F Maximum GCD Sum Queries</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="赵悦岑"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">赵悦岑</p>
+  <div class="site-description" itemprop="description">赵悦岑的 Blog，一个 OIer 的博客，由 Sukwants 提供技术支持</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/2745518585" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;2745518585" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zz2745518585@gmail.com" title="E-Mail → mailto:zz2745518585@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/291248" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;291248" rel="noopener" target="_blank"><i class="fa fa-luogu fa-fw"></i>Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://loj.ac/u/2745518585" title="LibreOJ → https:&#x2F;&#x2F;loj.ac&#x2F;u&#x2F;2745518585" rel="noopener" target="_blank"><i class="fa fa-libreoj fa-fw"></i>LibreOJ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/2745518585" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;2745518585" rel="noopener" target="_blank"><i class="fa fa-codeforces fa-fw"></i>Codeforces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/zz2745518585" title="AtCoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;zz2745518585" rel="noopener" target="_blank"><i class="fa fa-atcoder fa-fw"></i>AtCoder</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zyc.pond.ink/post/mess/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="赵悦岑">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="赵悦岑's Blog - 赵悦岑的博客">
+      <meta itemprop="description" content="赵悦岑的 Blog，一个 OIer 的博客，由 Sukwants 提供技术支持">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="杂题.md | 赵悦岑's Blog - 赵悦岑的博客">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          杂题.md
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+  
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-05-01 00:00:00" itemprop="dateCreated datePublished" datetime="2024-05-01T00:00:00+08:00">2024-05-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-05-23 10:20:08" itemprop="dateModified" datetime="2024-05-23T10:20:08+08:00">2024-05-23</time>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="QOJ6-玛里苟斯"><a href="#QOJ6-玛里苟斯" class="headerlink" title="QOJ6 玛里苟斯"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/6">QOJ6</a> 玛里苟斯</h4><p>注意到一个集合的答案等于其线性基的答案。</p>
+<p>$k \ge 3$ 暴力，$k&#x3D;1,2$ 单独考虑。</p>
+<h4 id="P6837-QOJ1138-Counting-Mushrooms"><a href="#P6837-QOJ1138-Counting-Mushrooms" class="headerlink" title="P6837 QOJ1138 Counting Mushrooms"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P6837">P6837</a> <a target="_blank" rel="noopener" href="https://qoj.ac/problem/1138">QOJ1138</a> Counting Mushrooms</h4><p>根号分治，先查出根号个 $0&#x2F;1$，再一次查询根号个。</p>
+<p>精细实现，$2$ 次查 $5$ 个。</p>
+<h4 id="QOJ1430-Ineq"><a href="#QOJ1430-Ineq" class="headerlink" title="QOJ1430 Ineq"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/1430">QOJ1430</a> Ineq</h4><p>Pick 定理数凸包内点数</p>
+<h4 id="P8985-QOJ3270-魔塔-OL"><a href="#P8985-QOJ3270-魔塔-OL" class="headerlink" title="P8985 QOJ3270 魔塔 OL"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P8985">P8985</a> <a target="_blank" rel="noopener" href="https://qoj.ac/problem/3270">QOJ3270</a> 魔塔 OL</h4><p>贪心部分，前半段 $a_i \le b_i$，按 $a_i$ 升序，后半段按 $b_i$ 降序，反向操作可证。</p>
+<p>转化为四维偏序，考虑对于高维偏序的一般做法：用 bitset 处理出落在这个前缀内的所有点的标号，那么一次查询相当于将每个维度对应的 bitset 求交。由于这里需要顺序递推，考虑分块，每块长 $\log$，块内 $2^B$ 处理，复杂度 $O(\frac{(n+q+V)n}{\log n})$。</p>
+<h4 id="P8987-QOJ3272-简单数据结构"><a href="#P8987-QOJ3272-简单数据结构" class="headerlink" title="P8987 QOJ3272 简单数据结构"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P8987">P8987</a> <a target="_blank" rel="noopener" href="https://qoj.ac/problem/3272">QOJ3272</a> 简单数据结构</h4><p>注意到不降序列操作后仍然不降，且操作是全局的，考虑维护不降序列区间，整体二分可维护。</p>
+<h4 id="QOJ4303-New-Level"><a href="#QOJ4303-New-Level" class="headerlink" title="QOJ4303 New Level"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/4303">QOJ4303</a> New Level</h4><p>题意：给定一个图和一个染色方案（$1 \sim k$），保证相邻两个点颜色不同，找出一个方案满足：</p>
+<ol>
+<li>相邻两个点颜色不同。</li>
+<li>只保留两点颜色编号差模 $k$ 同余 $1$ 的边后图仍然连通。</li>
+</ol>
+<p>将边权设为两点颜色之差，将点权改为到 $1$ 的最短路。正确性易证。</p>
+<h4 id="QOJ4891-树上的孤独"><a href="#QOJ4891-树上的孤独" class="headerlink" title="QOJ4891 树上的孤独"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/4891">QOJ4891</a> 树上的孤独</h4><p><a target="_blank" rel="noopener" href="https://4182543731.github.io/post/LullabyforTiuLii/#d1-t3-42-%E6%A0%91%E4%B8%8A%E7%9A%84%E5%AD%A4%E7%8B%AC">题解</a></p>
+<h4 id="QOJ4895-Lovely-Dogs"><a href="#QOJ4895-Lovely-Dogs" class="headerlink" title="QOJ4895 Lovely Dogs"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/4895">QOJ4895</a> Lovely Dogs</h4><p><a target="_blank" rel="noopener" href="https://4182543731.github.io/post/LullabyforTiuLii/#d3-t1-9-lovely-dogs">题解</a></p>
+<p>注意到 $f(i)$ 不为 $0$ 有 $f(i) &#x3D; f(d)f(\frac{i}{d})$，转化为统计子树内质因子个数不超过一定值的 $v$ 的和，容斥后可维护。</p>
+<h4 id="P9055-QOJ4900-数列重排"><a href="#P9055-QOJ4900-数列重排" class="headerlink" title="P9055 QOJ4900 数列重排"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P9055">P9055</a> <a target="_blank" rel="noopener" href="https://qoj.ac/problem/4900">QOJ4900</a> 数列重排</h4><p><a target="_blank" rel="noopener" href="https://4182543731.github.io/post/LullabyforTiuLii/#d4-t3-48-%E6%95%B0%E5%88%97%E9%87%8D%E6%8E%92">题解</a></p>
+<p>对于一个 $k$，一个区间合法当且仅当 $0 \sim k-1$（称为关键数）都出现过，关键数依次排列显然最优：包含任意 $k$ 个关键数的区间均合法。非关键数仅能插到 $k$ 的整数倍位置和末尾。</p>
+<h4 id="QOJ4906-球球"><a href="#QOJ4906-球球" class="headerlink" title="QOJ4906 球球"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/4906">QOJ4906</a> 球球</h4><p><a target="_blank" rel="noopener" href="https://4182543731.github.io/post/LullabyforTiuLii/#d6-t3-19-%E7%90%83%E7%90%83">题解</a></p>
+<p>分类讨论。用 $S_i$ 和 $T_i$ 分别表示人和分身在 $a_i$ 时另一个可以在的位置集合，几种操作都能简单维护。</p>
+<h4 id="QOJ4909-《关于因为与去年互测zjk撞题而不得不改题这回事》"><a href="#QOJ4909-《关于因为与去年互测zjk撞题而不得不改题这回事》" class="headerlink" title="QOJ4909 《关于因为与去年互测zjk撞题而不得不改题这回事》"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/4909">QOJ4909</a> 《关于因为与去年互测zjk撞题而不得不改题这回事》</h4><p><a target="_blank" rel="noopener" href="https://4182543731.github.io/post/LullabyforTiuLii/#d7-t3-29-%E5%85%B3%E4%BA%8E%E5%9B%A0%E4%B8%BA%E4%B8%8E%E5%8E%BB%E5%B9%B4%E4%BA%92%E6%B5%8Bzjk%E6%92%9E%E9%A2%98%E8%80%8C%E4%B8%8D%E5%BE%97%E4%B8%8D%E6%94%B9%E9%A2%98%E8%BF%99%E5%9B%9E%E4%BA%8B">题解</a></p>
+<p>贪心部分，如果当前位为 $1$ 的个数大于等于 $k$，则只保留当前位为 $1$ 的数，答案这一位为 $1$，否则这一位为 $0$。</p>
+<p>假设当前序列有序，则只需要判断第 $k$ 大的数，而如果当前位为 $0$，忽略当前位的第 $k$ 大一定在整个序列前 $2k$ 个。所以 $\log v$ 层的前 $k$ 大一定在整个序列前 $k \log v$ 个，取出来暴力即可。</p>
+<p>取出链上前 $q$ 大可以每次取最大值后分成两条链。</p>
+<h4 id="QOJ4914-Slight-Hope"><a href="#QOJ4914-Slight-Hope" class="headerlink" title="QOJ4914 Slight Hope"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/4914">QOJ4914</a> Slight Hope</h4><p>$l$ 限制转为区间查，对 $r$ 分块。注意到一个区间构成的森林中作为根的节点深度相差至多为 $1$，可快速求出一个点所在根节点。</p>
+<h4 id="QOJ4924-蜘蛛爬树"><a href="#QOJ4924-蜘蛛爬树" class="headerlink" title="QOJ4924 蜘蛛爬树"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/4924">QOJ4924</a> 蜘蛛爬树</h4><p><a target="_blank" rel="noopener" href="https://4182543731.github.io/post/LullabyforTiuLii/#d12-t3-44-%E8%9C%98%E8%9B%9B%E7%88%AC%E6%A0%91">题解</a></p>
+<p>分类讨论。发现查询可以在凸包上二分解决。树剖线段树维护凸包，建树时凸包从儿子归并可以少掉排序的 $\log$。</p>
+<h4 id="QOJ5040-Dirichlet-k-th-root"><a href="#QOJ5040-Dirichlet-k-th-root" class="headerlink" title="QOJ5040 Dirichlet $k$-th root"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5040">QOJ5040</a> Dirichlet $k$-th root</h4><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21334057/article/details/104382333">题解</a></p>
+<p>当 $f(1)&#x3D;1$ 时，有 $f &#x3D; g^{\text{inv}(k)}$。</p>
+<h4 id="QOJ5047-Permutation"><a href="#QOJ5047-Permutation" class="headerlink" title="QOJ5047 Permutation"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5047">QOJ5047</a> Permutation</h4><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhouzhendong/p/ECfinal2019.html">题解</a> J</p>
+<p>每次按最小值分治。</p>
+<h4 id="QOJ5171-理论出线"><a href="#QOJ5171-理论出线" class="headerlink" title="QOJ5171 理论出线"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5171">QOJ5171</a> 理论出线</h4><h4 id="QOJ5305-Oscar-is-All-You-Need"><a href="#QOJ5305-Oscar-is-All-You-Need" class="headerlink" title="QOJ5305 Oscar is All You Need"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5305">QOJ5305</a> Oscar is All You Need</h4><p>分类讨论。</p>
+<p>注意到可以通过 $op(i,2),op(1,i)$ 将末尾数移至第 $i$ 个数后，考虑每次将插入到前面来排序。由于每段非空，显然不能将通过这种方法交换最后两个数，需特殊考虑。</p>
+<h4 id="QOJ5308-RPG-Pro-League"><a href="#QOJ5308-RPG-Pro-League" class="headerlink" title="QOJ5308 RPG Pro League"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5308">QOJ5308</a> RPG Pro League</h4><p>左边四个点分别代表一队中 $4$ 个位置，右边 $7$ 个点表示玩家类型，求出最多多少组对于左部点的完美匹配。考虑完美匹配的判断：Hall 定理（$\forall S \subseteq X,|N(S)| \ge |S|$），那么能拆分出的完美匹配组数就是 $\min(\frac{|N(S)|}{S}),S \subseteq X$。</p>
+<p>考虑修改，显然加入&#x2F;删除 $x$ 后最多只会删除&#x2F;加入一个人，且这个人为所属类型集合中最大值&#x2F;集合外最小值，枚举即可。</p>
+<h4 id="QOJ5309-Guess-Cycle-Length"><a href="#QOJ5309-Guess-Cycle-Length" class="headerlink" title="QOJ5309 Guess Cycle Length"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5309">QOJ5309</a> Guess Cycle Length</h4><p>根号做法显然。考虑查询得到的编号一定在 $1$ 到 $n$ 之间，可以通过随机查询一些位置来得到一个较大的下限，然后使用根号做法即可。</p>
+<h4 id="QOJ5312-Levenshtein-Distance"><a href="#QOJ5312-Levenshtein-Distance" class="headerlink" title="QOJ5312 Levenshtein Distance"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5312">QOJ5312</a> Levenshtein Distance</h4><p>记 $f_{i,j}$ 表示 $S_{1,x}$ 与 $T_{1,x+j}$ 距离为 $i$，$x$ 最大值，ST 表维护 $\text{LCP}(S_{x,|S|},T_{y,|T|})$，对于 $T$ 每个起始位置 $k^2$ 转移一次即可。</p>
+<h4 id="QOJ5418-Color-the-Tree"><a href="#QOJ5418-Color-the-Tree" class="headerlink" title="QOJ5418 Color the Tree"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5418">QOJ5418</a> Color the Tree</h4><p>法 1：考虑每层分开考虑，对当前层的所有点建虚树后可 dp。</p>
+<p>法 2：$f_{x,i}$ 表示 $x$ 子树中第 $i$ 层全部染色的代价，长链剖分可做。</p>
+<h4 id="QOJ5421-Factories-Once-More"><a href="#QOJ5421-Factories-Once-More" class="headerlink" title="QOJ5421 Factories Once More"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5421">QOJ5421</a> Factories Once More</h4><p>记 $f_{x,i}$ 表示 $x$ 子树中选了 $i$ 个点的最大值，转移 $f_{x,i} &#x3D; \max(f_{x,i-j}+f_{y,j}+w j (k-j))$，注意到 $f$ 是上凸函数（上凸函数的 $(\max,+)$ 卷积仍为上凸函数）。考虑维护单调的差分数组，$(\max,+)$ 卷积为合并两个差分数组，$f_{x,i} \rightarrow f_{x,i+1}$ 即在最高点插入一个 $0$，同时还需要支持给差分数组加上等差数列，平衡树启发式合并维护。</p>
+<h4 id="QOJ5423-Perfect-Matching"><a href="#QOJ5423-Perfect-Matching" class="headerlink" title="QOJ5423 Perfect Matching"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5423">QOJ5423</a> Perfect Matching</h4><p>转化为一个二分图第 $i$ 条边连接 $a_i-i$ 与 $a_i+i$，问能否将边分成 $\frac{n}{2}$ 对使得每队边有公共点。</p>
+<p>对于一个连通块 dfs，通过调整当前点到父亲的边可以使得其余连接到这个点的边均匹配，到父亲的边一定会在父亲点匹配。</p>
+<h4 id="QOJ5425-Proposition-Composition"><a href="#QOJ5425-Proposition-Composition" class="headerlink" title="QOJ5425 Proposition Composition"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5425">QOJ5425</a> Proposition Composition</h4><p>分类讨论。</p>
+<ol>
+<li>删其中某一条边即不连通。维护未被覆盖的边数即可。</li>
+<li>其中一条边覆盖另一条。当且仅当链上的那条边只被一条边覆盖，容易维护。</li>
+<li>两条边都在链上。当且仅当所有额外边要么同时覆盖要么同时不覆盖。考虑维护一个集合满足集合内任意两条边满足条件，线段树维护区间内最小前驱&#x2F;最大后继，暴力分裂，使用启发式分裂（修改分裂后较小的一个集合）维护所属集合。</li>
+</ol>
+<h4 id="QOJ5519-Count-Hamiltonian-Cycles"><a href="#QOJ5519-Count-Hamiltonian-Cycles" class="headerlink" title="QOJ5519 Count Hamiltonian Cycles"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5519">QOJ5519</a> Count Hamiltonian Cycles</h4><p>尽量使前缀中两种点匹配但不能全部匹配，贪心即可。</p>
+<h4 id="QOJ5523-Graph-Problem-With-Small-n"><a href="#QOJ5523-Graph-Problem-With-Small-n" class="headerlink" title="QOJ5523 Graph Problem With Small $n$"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5523">QOJ5523</a> Graph Problem With Small $n$</h4><p>记 $f_i$ 表示以 $1$ 开头经过 $i$ 中的点的路径可能的结束点，容易转移与求答案。</p>
+<h4 id="QOJ5528-Least-Annoying-Constructive-Problem"><a href="#QOJ5528-Least-Annoying-Constructive-Problem" class="headerlink" title="QOJ5528  Least Annoying Constructive Problem"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/5528">QOJ5528</a>  Least Annoying Constructive Problem</h4><p>先考虑奇数情况：把所有边分成 $n$ 组，其中第 $i$ 组为 ${(i-1,i+1),(i-2,i+2),\dots,(i-n&#x2F;2,i+n&#x2F;2)}$（所有数对 $n$ 取模）。依次输出 $1$ 到 $n$ 组中的边即可，容易证明。</p>
+<p>偶数情况先去掉 $n$ 按奇数的方法分组，然后每组末尾加上 $(i,n)$，容易证明。</p>
+<h4 id="QOJ6308-Magic"><a href="#QOJ6308-Magic" class="headerlink" title="QOJ6308 Magic"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/6308">QOJ6308</a> Magic</h4><p>注意到 $l,r$ 互不相同，那么对于有交但不包含的两个区间 $[l_1,r_1)$ 与 $[l_2,r_2)$（$l_1 &lt; l_2$），要使 $a_{l_1} \neq a_{l_1+1}$，显然 $[l_1,r_1)$ 需要比 $[l_2,r_2)$ 后操作，$r_2$ 同理，即 $l_1$ 与 $r_2$ 至多只能有一个满足条件。</p>
+<p>转化为二分图最大独立集，使用 bitset 可以通过。</p>
+<h4 id="QOJ6501-Graph-Partitioning"><a href="#QOJ6501-Graph-Partitioning" class="headerlink" title="QOJ6501 Graph Partitioning"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/6501">QOJ6501</a> Graph Partitioning</h4><p>对于一条边 $(x,y)$，在第一棵树上时 $x$ 是 $y$ 的父亲，第二棵树上时 $y$ 是 $x$ 的父亲，相当于选择第一棵树的 $x$ 或第二棵树的 $y$，每个点仅能被一条边选择。有解当且仅当每个连通块边数等于点数，即基环树，方案为 $2$。</p>
+<h4 id="QOJ6837-AC-Automaton"><a href="#QOJ6837-AC-Automaton" class="headerlink" title="QOJ6837 AC Automaton"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/6837">QOJ6837</a> AC Automaton</h4><p>记 $f$ 为 $u$ 子树中某种字符的个数，$g$ 为 $u$ 祖先中某种字符的个数，答案即为 $\sum\limits_{s_u&#x3D;’A’} f_{u,{‘C’,’?’}} + \sum\limits_{s_u&#x3D;’?’} \max(f_{u,{‘C’,’?’}}-g_{u,{‘A’,’?’}},0) &#x3D; \sum\limits_{s_u&#x3D;’A’} F_u + \sum\limits_{s_u&#x3D;’?’} \max(G_u,0)$。考虑维护 $F$ 与 $\max(G,0)$。</p>
+<p>对询问分块，块内在虚树上处理，容易维护。</p>
+<h4 id="QOJ6842-Popcount-Words"><a href="#QOJ6842-Popcount-Words" class="headerlink" title="QOJ6842 Popcount Words"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/6842">QOJ6842</a> Popcount Words</h4><p>容易想到建立 AC 自动机后暴力跳。考虑倍增，注意到 $2|\text{popcount}(k)$ 时 $[k2^n,(k+1)2^n)$ 与 $[0,2^n)$ 相同，否则恰好相反。记 $w_{n,0&#x2F;1}$ 表示 $[0,2^n) &#x2F; [0,2^n)$ 取反，那么任意一个区间可以拆分为 $\log$ 段 $w$。</p>
+<h4 id="QOJ6846-Wiring-Engineering"><a href="#QOJ6846-Wiring-Engineering" class="headerlink" title="QOJ6846 Wiring Engineering"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/6846">QOJ6846</a> Wiring Engineering</h4><p>确定 $a$ 和 $c$ 后容易 $n^2$ 转移，注意到方程与 $a,c$ 无关，可以转化为 $(a,c)$ 到 $(b+1,d+1)$ 的最长路。注意到 $n$ 较小，$q$ 较大，考虑分治，将两维中左右端点差距较大的一个分治。枚举中点 $m$ 对应的点 $i$，表示 $m$ 左边的点连接 $i$ 左边的点，$m$ 右边的点连接 $i$ 右边的点，容易处理出跨过中点的询问的答案，复杂度 $O(n^3+nq)$。</p>
+<h4 id="P9061-QOJ7436-Optimal-Ordered-Problem-Solver"><a href="#P9061-QOJ7436-Optimal-Ordered-Problem-Solver" class="headerlink" title="P9061 QOJ7436 Optimal Ordered Problem Solver"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P9061">P9061</a> <a target="_blank" rel="noopener" href="https://qoj.ac/problem/7436">QOJ7436</a> Optimal Ordered Problem Solver</h4><p>考虑维护轮廓线，使用平衡树维护轮廓线上的点。轮廓线外的点的贡献是坐标与时间的三维偏序，当询问点在轮廓线外时，右上方的区域一定与轮廓线无交，那么分别求出上方、右方、右上方的点数即可，复杂度 $O(n \log n)$。</p>
+<h4 id="QOJ7736-Red-Black-Tree"><a href="#QOJ7736-Red-Black-Tree" class="headerlink" title="QOJ7736 Red Black Tree"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/7736">QOJ7736</a> Red Black Tree</h4><p>记 $f_{x,i}$ 表示 $x$ 到其子树内所有叶子黑点个数均为 $i$ 的最小代价，可以证明 $f_x$ 是凸函数，因此可以维护差分数组，$(\min,+)$ 卷积只需要合并两个差分数组，当前点的贡献为插入一个 $-1$ 或 $1$，可以用两个 vector 分别维护负数和正数部分。</p>
+<h4 id="QOJ8343-玩游戏"><a href="#QOJ8343-玩游戏" class="headerlink" title="QOJ8343 玩游戏"></a><a target="_blank" rel="noopener" href="https://qoj.ac/problem/8343">QOJ8343</a> 玩游戏</h4><p><a target="_blank" rel="noopener" href="https://www.ceoi2016.ro/wp-content/uploads/2016/08/trick-solution.pdf">题解</a></p>
+<p>考虑用两张牌映射到这 $n$ 个数的和 $s$，首先将每个数减去 $s$，我们希望找到两个和为 $0$ 的牌，这样两个数的和就是 $2s$。两两匹配后共有 $n+1$ 组，显然不可行，考虑将 $(0,1,2n),(2,n,2n-1),(4,n+1,2n-3)$ 组成一组，剩下两两匹配，共 $n-1$ 组，那么至少有两个出现在同一组中。但这样会产生 $6$ 种特殊情况，考虑使用两数的差来区分，调整顺序可以得到任意特殊情况与其他情况差均不相同的方案。</p>
+<h4 id="CF1768F-Wonderful-Jump"><a href="#CF1768F-Wonderful-Jump" class="headerlink" title="CF1768F Wonderful Jump"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1768F">CF1768F</a> Wonderful Jump</h4><p>如果有 $a_k \le a_i,a_j$，显然 $i \rightarrow k,k \rightarrow j$ 优于 $i \rightarrow j$。即每一步转移区间最小值均在两端。</p>
+<p>考虑对每个 $i$ 以 $a_i$ 为最小值向前、向后转移。注意到代价是一次跳过的长度的平方，可以考虑用上界限制转移范围，容易发现长度大于 $\frac{n}{a_i}$ 时一定劣于一步一步跳。</p>
+<p>易证复杂度 $O(n \sqrt{n})$。</p>
+<h4 id="CF1868D-Flower-like-Pseudotree"><a href="#CF1868D-Flower-like-Pseudotree" class="headerlink" title="CF1868D Flower-like Pseudotree"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1868/problem/D">CF1868D</a> Flower-like Pseudotree</h4><p>分类讨论。</p>
+<ol>
+<li>$d_i \ge 2$ 的点有 $n$ 个。</li>
+<li>$d_i \ge 2$ 的点有 $0$ 个。</li>
+</ol>
+<p>以上情况容易构造，剩下的情况考虑把两个 $d_i \ge 3$ 的点组成环（否则显然无解），剩余 $d_i \ge 2$ 的点分别拖两条链。$d_i \ge 2$ 的个数为奇数时需尝试把一个点往尽量浅的位置放，不能则无解。</p>
+<h4 id="CF1728F-Fishermen"><a href="#CF1728F-Fishermen" class="headerlink" title="CF1728F Fishermen"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1728F">CF1728F</a> Fishermen</h4><p>相当于 $i$ 和 $a_i$ 倍数连边后跑最大匹配。直接做是 $O(n^4)$ 的，假如每次成功增广后再清空标记数组可以做到 $O(n^3)$。</p>
+<h4 id="UOJ883-景点观光"><a href="#UOJ883-景点观光" class="headerlink" title="UOJ883 景点观光"></a><a target="_blank" rel="noopener" href="https://uoj.ac/problem/883">UOJ883</a> 景点观光</h4><p>先删掉子树内无关键点的点，猜测最终路线为以某种顺序遍历整棵树，即答案为 $2(n-1)-k$，$k$ 为最多能进行几次跳两步。</p>
+<p>考虑 dp，注意到如果从上一个子树出来与进入下一个子树都是跳一步，那么可以考虑合并这两个操作。记 $f_{x,0&#x2F;1,0&#x2F;1}$ 表示遍历完 $x$ 子树（包括进入子树与离开子树），第一个操作是否为跳一步，最后一个操作是否为跳一步。$f_{x,0,1}$ 与 $f_{x,1,0}$ 等价，状态可记为 $g_{x,0&#x2F;1&#x2F;2}$。</p>
+<p>假设已经知道了每个子节点的决策，可贪心地将其拼在一起。观察发现，一般钦定任意一个子节点更换决策对答案的影响不超过 $1$，那么每个子节点选 $g_{i,j}$ 较大的那一个，如有多个最大值选 $j$ 最大的。唯一一种例外是所有子节点决策均为 $0$，自身决策为 $2$ 时，特判即可。</p>
+<h4 id="CF429E-Points-and-Segments"><a href="#CF429E-Points-and-Segments" class="headerlink" title="CF429E Points and Segments"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF429E">CF429E</a> Points and Segments</h4><p>容易想到将染色变为对边定向，即删去覆盖次数为偶数的边后每个连通块跑欧拉回路。</p>
+<h4 id="CF1973F-Maximum-GCD-Sum-Queries"><a href="#CF1973F-Maximum-GCD-Sum-Queries" class="headerlink" title="CF1973F Maximum GCD Sum Queries"></a><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1973/problem/F">CF1973F</a> Maximum GCD Sum Queries</h4><p>钦定不交换 $a_1,b_1$，那么两个序列 $\gcd$ 分别是 $a_1,b_1$ 的因数，注意到 $10^8$ 内一个数的因数个数最大不超过 $1000$，考虑以 $(\gcd_1,\gcd_2)$ 为状态。</p>
+<p>记 $f_{p_1,p_2}$ 表示最终结果为 $(p_1,p_2)$ 时 $[2,n]$ 中可以满足的 $i$ 的个数（即 $a_i,b_i$ 分别是 $p_1,p_2$ 或 $p_2,p_1$ 的倍数），考虑通过类似高位前缀和的方式转移，只需要在 $f_{\gcd(a_1,a_i),\gcd(b_1,b_i)}$ 与 $f_{\gcd(a_1,b_i),\gcd(b_1,a_i)}$ 处分别 $+1$，在这两个的 $\gcd$ 处 $-1$ 避免重复即可。如果 $f_{i,j} &#x3D; n-1$ 则表示 $(i,j)$ 合法，而代价可以用相同的方式转移。</p>
+
+    </div>
+
+    
+    
+    
+      
+
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9D%82%E9%A2%98/" rel="tag"><i class="fa fa-tag"></i> 杂题</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/scoi-2024-travels/" rel="prev" title="SCOI 2024 游记">
+                  <i class="fa fa-chevron-left"></i> SCOI 2024 游记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/APIO2024-travels/" rel="next" title="APIO 2024 游记">
+                  APIO 2024 游记 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+  <div class="comments giscus"></div>
+  <script src="https://giscus.app/client.js"
+          data-repo="2745518585/2745518585.github.io"
+          data-repo-id="R_kgDOIhHJaA"
+          data-category="Announcements"
+          data-category-id="DIC_kwDOIhHJaM4CS-MO"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="preferred_color_scheme"
+          data-lang="zh-CN"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <style>.giscus{width:initial}</style>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赵悦岑</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div class="running-time">
+    <span id="timeDate"></span>
+    <span id="times"></span>
+    <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("11/28/2022 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+            document.getElementById("timeDate").innerHTML = "本站已经安全运行 " + dnum + " 天";
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        }
+    setInterval("createtime()",250);
+    </script>
+  </div>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>

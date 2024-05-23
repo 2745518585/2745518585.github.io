@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="true">
+  <meta name="msvalidate.01" content="true">
+  <meta name="yandex-verification" content="true">
+  <meta name="baidu-site-verification" content="true">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zyc.pond.ink","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+  <style type="text/css">
+
+div.hcb-content.hcb-block.hcbnote, details.hcb-content.box.hcbnote,div.hcb-content.hcb-block.hcbabstract, details.hcb-content.box.hcbabstract,div.hcb-content.hcb-block.hcbinfo, details.hcb-content.box.hcbinfo,div.hcb-content.hcb-block.hcbtip, details.hcb-content.box.hcbtip,div.hcb-content.hcb-block.hcbsuccess, details.hcb-content.box.hcbsuccess,div.hcb-content.hcb-block.hcbquestion, details.hcb-content.box.hcbquestion,div.hcb-content.hcb-block.hcbwarning, details.hcb-content.box.hcbwarning,div.hcb-content.hcb-block.hcbfailure, details.hcb-content.box.hcbfailure,div.hcb-content.hcb-block.hcbdanger, details.hcb-content.box.hcbdanger,div.hcb-content.hcb-block.hcbbug, details.hcb-content.box.hcbbug,div.hcb-content.hcb-block.hcbexample, details.hcb-content.box.hcbexample,div.hcb-content.hcb-block.hcbquote, details.hcb-content.box.hcbquote {
+  border: .05rem solid #448aff;
+  border-radius: .2rem;
+  font-size: 0.96rem;
+  margin: 1.5625em 0;
+  padding: 0 1.2rem;
+  transition: box-shadow 250ms;
+}
+div.hcb-content.hcb-block.hcbnote, details.hcb-content.box.hcbnote {
+  border-color: #448aff;
+}
+div.hcb-content.hcb-block.hcbabstract, details.hcb-content.box.hcbabstract {
+  border-color: #00b0ff;
+}
+div.hcb-content.hcb-block.hcbinfo, details.hcb-content.box.hcbinfo {
+  border-color: #00b8d4;
+}
+div.hcb-content.hcb-block.hcbtip, details.hcb-content.box.hcbtip {
+  border-color: #00bfa5;
+}
+div.hcb-content.hcb-block.hcbsuccess, details.hcb-content.box.hcbsuccess {
+  border-color: #00c853;
+}
+div.hcb-content.hcb-block.hcbquestion, details.hcb-content.box.hcbquestion {
+  border-color: #64dd17;
+}
+div.hcb-content.hcb-block.hcbwarning, details.hcb-content.box.hcbwarning {
+  border-color: #ff9100;
+}
+div.hcb-content.hcb-block.hcbfailure, details.hcb-content.box.hcbfailure {
+  border-color: #ff5252;
+}
+div.hcb-content.hcb-block.hcbdanger, details.hcb-content.box.hcbdanger {
+  border-color: #ff1744;
+}
+div.hcb-content.hcb-block.hcbbug, details.hcb-content.box.hcbbug {
+  border-color: #f50057;
+}
+div.hcb-content.hcb-block.hcbexample, details.hcb-content.box.hcbexample {
+  border-color: #7c4dff;
+}
+div.hcb-content.hcb-block.hcbquote, details.hcb-content.box.hcbquote {
+  border-color: #9e9e9e;
+}
+div.hcb-content.hcb-block.hcbnote:focus-within, details.hcb-content.box.hcbnote:focus-within {
+  box-shadow: 0 0 0 .2rem #448aff1a;
+}
+div.hcb-content.hcb-block.hcbabstract:focus-within, details.hcb-content.box.hcbabstract:focus-within {
+  box-shadow: 0 0 0 .2rem #00b0ff1a;
+}
+div.hcb-content.hcb-block.hcbinfo:focus-within, details.hcb-content.box.hcbinfo:focus-within {
+  box-shadow: 0 0 0 .2rem #00b8d41a;
+}
+div.hcb-content.hcb-block.hcbtip:focus-within, details.hcb-content.box.hcbtip:focus-within {
+  box-shadow: 0 0 0 .2rem #00bfa51a;
+}
+div.hcb-content.hcb-block.hcbsuccess:focus-within, details.hcb-content.box.hcbsuccess:focus-within {
+  box-shadow: 0 0 0 .2rem #00c8531a;
+}
+div.hcb-content.hcb-block.hcbquestion:focus-within, details.hcb-content.box.hcbquestion:focus-within {
+  box-shadow: 0 0 0 .2rem #64dd171a;
+}
+div.hcb-content.hcb-block.hcbwarning:focus-within, details.hcb-content.box.hcbwarning:focus-within {
+  box-shadow: 0 0 0 .2rem #ff91001a;
+}
+div.hcb-content.hcb-block.hcbfailure:focus-within, details.hcb-content.box.hcbfailure:focus-within {
+  box-shadow: 0 0 0 .2rem #ff52521a;
+}
+div.hcb-content.hcb-block.hcbdanger:focus-within, details.hcb-content.box.hcbdanger:focus-within {
+  box-shadow: 0 0 0 .2rem #ff17441a;
+}
+div.hcb-content.hcb-block.hcbbug:focus-within, details.hcb-content.box.hcbbug:focus-within {
+  box-shadow: 0 0 0 .2rem #f500571a;
+}
+div.hcb-content.hcb-block.hcbexample:focus-within, details.hcb-content.box.hcbexample:focus-within {
+  box-shadow: 0 0 0 .2rem #7c4dff1a;
+}
+div.hcb-content.hcb-block.hcbquote:focus-within, details.hcb-content.box.hcbquote:focus-within {
+  box-shadow: 0 0 0 .2rem #9e9e9e1a;
+}
+div.hcb-content.hcb-block.hcbnote *, details.hcb-content.box.hcbnote *,div.hcb-content.hcb-block.hcbabstract *, details.hcb-content.box.hcbabstract *,div.hcb-content.hcb-block.hcbinfo *, details.hcb-content.box.hcbinfo *,div.hcb-content.hcb-block.hcbtip *, details.hcb-content.box.hcbtip *,div.hcb-content.hcb-block.hcbsuccess *, details.hcb-content.box.hcbsuccess *,div.hcb-content.hcb-block.hcbquestion *, details.hcb-content.box.hcbquestion *,div.hcb-content.hcb-block.hcbwarning *, details.hcb-content.box.hcbwarning *,div.hcb-content.hcb-block.hcbfailure *, details.hcb-content.box.hcbfailure *,div.hcb-content.hcb-block.hcbdanger *, details.hcb-content.box.hcbdanger *,div.hcb-content.hcb-block.hcbbug *, details.hcb-content.box.hcbbug *,div.hcb-content.hcb-block.hcbexample *, details.hcb-content.box.hcbexample *,div.hcb-content.hcb-block.hcbquote *, details.hcb-content.box.hcbquote * {
+  box-sizing: border-box;
+}
+div.hcb-content.hcb-block.hcbnote > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbnote > summary,div.hcb-content.hcb-block.hcbabstract > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbabstract > summary,div.hcb-content.hcb-block.hcbinfo > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbinfo > summary,div.hcb-content.hcb-block.hcbtip > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbtip > summary,div.hcb-content.hcb-block.hcbsuccess > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbsuccess > summary,div.hcb-content.hcb-block.hcbquestion > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbquestion > summary,div.hcb-content.hcb-block.hcbwarning > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbwarning > summary,div.hcb-content.hcb-block.hcbfailure > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbfailure > summary,div.hcb-content.hcb-block.hcbdanger > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbdanger > summary,div.hcb-content.hcb-block.hcbbug > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbbug > summary,div.hcb-content.hcb-block.hcbexample > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbexample > summary,div.hcb-content.hcb-block.hcbquote > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbquote > summary {
+  border-top-right-radius: 0.1rem;
+  border-top-left-radius: 0.1rem;
+  border-left-width: 0.2rem;
+  display: block;
+  min-height: 1rem;
+  border: none;
+  font-weight: 700;
+  margin: 0 -1.2rem 1rem;
+  padding: 0.4rem 0.6rem;
+  position: relative;
+  outline: none;
+}
+details.hcb-content.box.hcbnote > summary,details.hcb-content.box.hcbabstract > summary,details.hcb-content.box.hcbinfo > summary,details.hcb-content.box.hcbtip > summary,details.hcb-content.box.hcbsuccess > summary,details.hcb-content.box.hcbquestion > summary,details.hcb-content.box.hcbwarning > summary,details.hcb-content.box.hcbfailure > summary,details.hcb-content.box.hcbdanger > summary,details.hcb-content.box.hcbbug > summary,details.hcb-content.box.hcbexample > summary,details.hcb-content.box.hcbquote > summary {
+  cursor: pointer;
+}
+details.hcb-content.box.hcbnote:not([open]) > summary,details.hcb-content.box.hcbabstract:not([open]) > summary,details.hcb-content.box.hcbinfo:not([open]) > summary,details.hcb-content.box.hcbtip:not([open]) > summary,details.hcb-content.box.hcbsuccess:not([open]) > summary,details.hcb-content.box.hcbquestion:not([open]) > summary,details.hcb-content.box.hcbwarning:not([open]) > summary,details.hcb-content.box.hcbfailure:not([open]) > summary,details.hcb-content.box.hcbdanger:not([open]) > summary,details.hcb-content.box.hcbbug:not([open]) > summary,details.hcb-content.box.hcbexample:not([open]) > summary,details.hcb-content.box.hcbquote:not([open]) > summary {
+  margin-bottom: 0;
+}
+div.hcb-content.hcb-block.hcbnote > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbnote > summary {
+  background-color: #448aff1a;
+}
+div.hcb-content.hcb-block.hcbabstract > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbabstract > summary {
+  background-color: #00b0ff1a;
+}
+div.hcb-content.hcb-block.hcbinfo > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbinfo > summary {
+  background-color: #00b8d41a;
+}
+div.hcb-content.hcb-block.hcbtip > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbtip > summary {
+  background-color: #00bfa51a;
+}
+div.hcb-content.hcb-block.hcbsuccess > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbsuccess > summary {
+  background-color: #00c8531a;
+}
+div.hcb-content.hcb-block.hcbquestion > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbquestion > summary {
+  background-color: #64dd171a;
+}
+div.hcb-content.hcb-block.hcbwarning > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbwarning > summary {
+  background-color: #ff91001a;
+}
+div.hcb-content.hcb-block.hcbfailure > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbfailure > summary {
+  background-color: #ff52521a;
+}
+div.hcb-content.hcb-block.hcbdanger > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbdanger > summary {
+  background-color: #ff17441a;
+}
+div.hcb-content.hcb-block.hcbbug > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbbug > summary {
+  background-color: #f500571a;
+}
+div.hcb-content.hcb-block.hcbexample > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbexample > summary {
+  background-color: #7c4dff1a;
+}
+div.hcb-content.hcb-block.hcbquote > p.hcb-content.hcb-block-title, details.hcb-content.box.hcbquote > summary {
+  background-color: #9e9e9e1a;
+}
+div.hcb-content.hcb-block.hcbnote > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbnote > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #448aff;
+}
+div.hcb-content.hcb-block.hcbabstract > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbabstract > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #00b0ff;
+}
+div.hcb-content.hcb-block.hcbinfo > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbinfo > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #00b8d4;
+}
+div.hcb-content.hcb-block.hcbtip > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbtip > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #00bfa5;
+}
+div.hcb-content.hcb-block.hcbsuccess > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbsuccess > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #00c853;
+}
+div.hcb-content.hcb-block.hcbquestion > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbquestion > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #64dd17;
+}
+div.hcb-content.hcb-block.hcbwarning > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbwarning > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #ff9100;
+}
+div.hcb-content.hcb-block.hcbfailure > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbfailure > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #ff5252;
+}
+div.hcb-content.hcb-block.hcbdanger > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbdanger > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #ff1744;
+}
+div.hcb-content.hcb-block.hcbbug > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbbug > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #f50057;
+}
+div.hcb-content.hcb-block.hcbexample > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbexample > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #7c4dff;
+}
+div.hcb-content.hcb-block.hcbquote > p.hcb-content.hcb-block-title > i, details.hcb-content.box.hcbquote > summary > i {
+  margin: 0 0.6rem 0 0.6rem;
+  color: #9e9e9e;
+}
+details.hcb-content.box.hcbnote > summary > div.hcb-box-open-button,details.hcb-content.box.hcbabstract > summary > div.hcb-box-open-button,details.hcb-content.box.hcbinfo > summary > div.hcb-box-open-button,details.hcb-content.box.hcbtip > summary > div.hcb-box-open-button,details.hcb-content.box.hcbsuccess > summary > div.hcb-box-open-button,details.hcb-content.box.hcbquestion > summary > div.hcb-box-open-button,details.hcb-content.box.hcbwarning > summary > div.hcb-box-open-button,details.hcb-content.box.hcbfailure > summary > div.hcb-box-open-button,details.hcb-content.box.hcbdanger > summary > div.hcb-box-open-button,details.hcb-content.box.hcbbug > summary > div.hcb-box-open-button,details.hcb-content.box.hcbexample > summary > div.hcb-box-open-button,details.hcb-content.box.hcbquote > summary > div.hcb-box-open-button {
+  float: right;
+}
+details.hcb-content.box.hcbnote > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbabstract > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbinfo > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbtip > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbsuccess > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbquestion > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbwarning > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbfailure > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbdanger > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbbug > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbexample > summary > div.hcb-box-open-button > i,details.hcb-content.box.hcbquote > summary > div.hcb-box-open-button > i {
+  margin: 0 0.6rem 0 0.6rem;
+  font-size: 0.7rem;
+  transition: transform 250ms
+}
+details.hcb-content.box.hcbnote:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbabstract:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbinfo:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbtip:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbsuccess:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbquestion:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbwarning:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbfailure:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbdanger:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbbug:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbexample:not([open]) > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbquote:not([open]) > summary > div.hcb-box-open-button i {
+  transform: rotate(270deg);
+}
+details.hcb-content.box.hcbnote[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbabstract[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbinfo[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbtip[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbsuccess[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbquestion[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbwarning[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbfailure[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbdanger[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbbug[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbexample[open] > summary > div.hcb-box-open-button i,details.hcb-content.box.hcbquote[open] > summary > div.hcb-box-open-button i {
+  transform: rotate(180deg);
+}
+details.hcb-content.box.hcbnote summary div.hcb-box-open-button i {
+  color: #448aff;
+}
+details.hcb-content.box.hcbabstract summary div.hcb-box-open-button i {
+  color: #00b0ff;
+}
+details.hcb-content.box.hcbinfo summary div.hcb-box-open-button i {
+  color: #00b8d4;
+}
+details.hcb-content.box.hcbtip summary div.hcb-box-open-button i {
+  color: #00bfa5;
+}
+details.hcb-content.box.hcbsuccess summary div.hcb-box-open-button i {
+  color: #00c853;
+}
+details.hcb-content.box.hcbquestion summary div.hcb-box-open-button i {
+  color: #64dd17;
+}
+details.hcb-content.box.hcbwarning summary div.hcb-box-open-button i {
+  color: #ff9100;
+}
+details.hcb-content.box.hcbfailure summary div.hcb-box-open-button i {
+  color: #ff5252;
+}
+details.hcb-content.box.hcbdanger summary div.hcb-box-open-button i {
+  color: #ff1744;
+}
+details.hcb-content.box.hcbbug summary div.hcb-box-open-button i {
+  color: #f50057;
+}
+details.hcb-content.box.hcbexample summary div.hcb-box-open-button i {
+  color: #7c4dff;
+}
+details.hcb-content.box.hcbquote summary div.hcb-box-open-button i {
+  color: #9e9e9e;
+}
+div.hcb-content.hcb-cards * {
+  box-sizing: border-box;
+}
+input.hcb-content.hcb-cards-input {
+  display: none;
+}
+div.hcb-content.hcb-cards-labels {
+  position: relative;
+  box-shadow: 0 -0.05rem #00000012 inset;
+  display: flex;
+  margin-bottom: 1.25rem;
+}
+div.hcb-content.hcb-cards-labels:before {
+  background: var(--cards-color);
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transform: translateX(var(--md-indicator-x));
+  transition: width 225ms, transform 250ms;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  width: var(--md-indicator-width);
+}
+label.hcb-content.hcb-cards-label {
+  border-bottom: 0.1rem solid #0000;
+  border-radius: 0.1rem 0.1rem 0 0;
+  cursor: pointer;
+  color: #0000008a;
+  font-size: 0.92em;
+  font-weight: 700;
+  padding: 0 1.25rem 0.625rem;
+  transition: color 250ms;
+}
+label.hcb-content.hcb-cards-label.active, label.hcb-content.hcb-cards-label:hover {
+  color: var(--cards-color);
+}
+div.hcb-content.hcb-cards-content {
+  display: none;
+}
+div.hcb-content.hcb-cards-content.active {
+  display: block;
+}
+</style>
+    <meta property="og:type" content="article">
+<meta property="og:title" content="平衡树Treap">
+<meta property="og:url" content="https://zyc.pond.ink/post/Balanced-tree-Treap/index.html">
+<meta property="og:site_name" content="赵悦岑&#39;s Blog - 赵悦岑的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zyc.pond.ink/post-images/Balanced-tree-Treap-1.png">
+<meta property="og:image" content="https://zyc.pond.ink/post-images/Balanced-tree-Treap-2.png?300x">
+<meta property="og:image" content="https://zyc.pond.ink/post-images/Balanced-tree-Treap-3.png">
+<meta property="article:published_time" content="2022-02-21T04:55:50.000Z">
+<meta property="article:modified_time" content="2023-09-22T12:19:59.954Z">
+<meta property="article:author" content="赵悦岑">
+<meta property="article:tag" content="平衡树">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zyc.pond.ink/post-images/Balanced-tree-Treap-1.png">
+
+
+<link rel="canonical" href="https://zyc.pond.ink/post/Balanced-tree-Treap/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zyc.pond.ink/post/Balanced-tree-Treap/","path":"post/Balanced-tree-Treap/","title":"平衡树Treap"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>平衡树Treap | 赵悦岑's Blog - 赵悦岑的博客</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RW613KZRR0"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-RW613KZRR0","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+  <script src="/js/third-party/analytics/baidu-analytics.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?f623bfe6371855c32564aec835255495"></script>
+
+
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "d2p2fosm33");
+</script>
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">赵悦岑's Blog - 赵悦岑的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">赵悦岑's Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-mirrors"><a href="/mirrors/" rel="section"><i class="fa fa-copy fa-fw"></i>镜像</a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-book fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="nav-text">基本思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%82%A8%E5%AD%98%E5%8F%8A%E6%9B%B4%E6%96%B0"><span class="nav-text">储存及更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%8B%E8%BD%AC%E6%93%8D%E4%BD%9C"><span class="nav-text">旋转操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%93%8D%E4%BD%9C"><span class="nav-text">插入操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="nav-text">删除操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%8E%92%E5%90%8D"><span class="nav-text">查询排名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%AF%B9%E5%BA%94%E6%8E%92%E5%90%8D%E7%9A%84%E5%85%83%E7%B4%A0"><span class="nav-text">查询对应排名的元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E5%89%8D%E9%A9%B1%E5%92%8C%E5%90%8E%E7%BB%A7"><span class="nav-text">查询前驱和后继</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Treap%E5%87%BD%E6%95%B0%E7%9A%84%E8%B0%83%E7%94%A8"><span class="nav-text">Treap函数的调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#code"><span class="nav-text">code</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="赵悦岑"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">赵悦岑</p>
+  <div class="site-description" itemprop="description">赵悦岑的 Blog，一个 OIer 的博客，由 Sukwants 提供技术支持</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">68</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/2745518585" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;2745518585" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:zz2745518585@gmail.com" title="E-Mail → mailto:zz2745518585@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.luogu.com.cn/user/291248" title="Luogu → https:&#x2F;&#x2F;www.luogu.com.cn&#x2F;user&#x2F;291248" rel="noopener" target="_blank"><i class="fa fa-luogu fa-fw"></i>Luogu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://loj.ac/u/2745518585" title="LibreOJ → https:&#x2F;&#x2F;loj.ac&#x2F;u&#x2F;2745518585" rel="noopener" target="_blank"><i class="fa fa-libreoj fa-fw"></i>LibreOJ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codeforces.com/profile/2745518585" title="Codeforces → https:&#x2F;&#x2F;codeforces.com&#x2F;profile&#x2F;2745518585" rel="noopener" target="_blank"><i class="fa fa-codeforces fa-fw"></i>Codeforces</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://atcoder.jp/users/zz2745518585" title="AtCoder → https:&#x2F;&#x2F;atcoder.jp&#x2F;users&#x2F;zz2745518585" rel="noopener" target="_blank"><i class="fa fa-atcoder fa-fw"></i>AtCoder</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zyc.pond.ink/post/Balanced-tree-Treap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="赵悦岑">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="赵悦岑's Blog - 赵悦岑的博客">
+      <meta itemprop="description" content="赵悦岑的 Blog，一个 OIer 的博客，由 Sukwants 提供技术支持">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="平衡树Treap | 赵悦岑's Blog - 赵悦岑的博客">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          平衡树Treap
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+  
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-21 12:55:50" itemprop="dateCreated datePublished" datetime="2022-02-21T12:55:50+08:00">2022-02-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-22 20:19:59" itemprop="dateModified" datetime="2023-09-22T20:19:59+08:00">2023-09-22</time>
+    </span>
+
+  
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>模板题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3369">P3369 【模板】普通平衡树</a><br>在一堆元素中查找一个元素，线性查找需要 $O(n)$ 的时间，于是人们就发明了 BST 二叉搜索树，一个节点左子树上的元素的值总小于此节点的值，此节点的右子树上的元素的值总小于此节点的值。这样根据一个元素的值就可以快速（$O(\log n)$）在 BST 上查找到一个元素。BST 有一个特点，就是它的中序遍历序列就是所有元素排序后的结果。不过同样的一些元素组成的 BST 两个 BST 记录的是同一组数。<br><img src="/post-images/Balanced-tree-Treap-1.png" alt="1"><br>不过这样还是容易被卡，比如所有元素按照大小顺序加入 BST，这个 BST 就会退化为一个链，复杂度就退化为 $O(n)$ 了，如下图。<br><img src="/post-images/Balanced-tree-Treap-2.png?300x" alt="2"><br>这时候我们就需要适当调整这个 BST 的形状，让这个 BST 更加平衡，于是又出现了平衡树，这里介绍一种较简单的平衡树，它就是 Treap。</p>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>Treap 其实是一个合成词“Tree+Heap”，翻译过来就是树堆，它既有 BST 的性质，也有堆的性质。Treap 会在插入元素的时候给每个元素一个随机的优先级，然后通过旋转操作，使得它满足 BST 的同时，还要满足一个节点的优先级小于它的所有儿子的优先级。由于优先级是随机的，所以这个 BST 的形状是随机的，就不会出现被卡成一条链的情况（只要人品正常）。</p>
+<h2 id="储存及更新"><a href="#储存及更新" class="headerlink" title="储存及更新"></a>储存及更新</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">treap</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x,l,r,s,k,t;</span><br><span class="line">&#125;T[<span class="number">1000001</span>];</span><br></pre></td></tr></table></figure>
+<p>平衡树的储存如上。Treap 的每个节点总共需要储存这几个值：这个节点的元素的值 $x$，这个节点的左、右儿子 $l,r$，这个节点的子树上总共的元素个数 $s$，这个节点的优先级 $k$ 和这个节点的元素个数 $t$。<br>平衡树需要动态更新当前子树的节点个数，我们就需要一个类似线段树的 pushup 函数，代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushup</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    T[x].s=T[T[x].l].s+T[T[x].r].s+T[x].t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="旋转操作"><a href="#旋转操作" class="headerlink" title="旋转操作"></a>旋转操作</h2><p>Treap中非常难懂的一部分就是它的旋转操作，它可以改变 BST 的形状。旋转分为左旋与右旋。右旋操作其实就是将这个节点的父节点变为这个点的右子节点，这个点调整到原父节点的位置，并将这个点的右节点调整为其原父节点的左节点。如下图，从左图到右图的操作就是将 $2$ 号节点进行右旋。<br><img src="/post-images/Balanced-tree-Treap-3.png" alt="3"><br>左旋的操作刚好和右旋相反。我们可以发现，第一个BST的中序遍历为 $4,2,5,1,3$ ，而第二个 $4,2,5,1,3$，这两个 BST 实质上记录的东西实质上是一样的，但是它的形状已经改变了。我们就可以通过旋转操作改变一个 BST 的形状。<br>由于旋转操作要改变指向当前节点的指针，所以我们要使用传址的方法，这样在旋转改变当前节点的时候在调用它的函数中的指针也会改变。<br>旋转操作的代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">rotate_l</span><span class="params">(<span class="type">int</span> &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> p=T[x].r;</span><br><span class="line">    T[x].r=T[p].l;</span><br><span class="line">    T[p].l=x;</span><br><span class="line">    T[p].s=T[x].s;</span><br><span class="line">    x=p;</span><br><span class="line">    <span class="built_in">pushup</span>(x);</span><br><span class="line">    <span class="built_in">pushup</span>(T[x].l);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rotate_r</span><span class="params">(<span class="type">int</span> &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> p=T[x].l;</span><br><span class="line">    T[x].l=T[p].r;</span><br><span class="line">    T[p].r=x;</span><br><span class="line">    T[p].s=T[x].s;</span><br><span class="line">    x=p;</span><br><span class="line">    <span class="built_in">pushup</span>(x);</span><br><span class="line">    <span class="built_in">pushup</span>(T[x].r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h2><p>Treap 的插入操作很简单，只需要一直找到对应元素值与插入值相等的位置或者发现不存在值相等的元素即可。如果我们要插入的元素值为 $k$，每到一个节点，如果对应元素值等于 $k$，就把这个点的元素个数加一；如果 $k$ 小于这个点的元素值，那么就进入这个点的左子节点；如果 $k$ 大于这个点的元素值，那么就进入这个点的右子节点；如果这个点的编号为 $0$，那么表明不存在与 $k$ 相等的元素，就新建一个节点，并随机赋优先级。<br>插入操作看似很简单，但是这样有可能不满足堆的性质，我们就需要进行旋转操作。如果左节点的优先级比这个节点小，那么就将这个节点右旋；如果右子节点的优先级比这个节点小，那么就将这个节点左旋。并且更新 Treap 的状态。<br>同样，插入操作由于要旋转，也要通过传址的方法传参。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> &amp;x,<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        x=++q;</span><br><span class="line">        T[x].l=T[x].r=<span class="number">0</span>;</span><br><span class="line">        T[x].s=T[x].t=<span class="number">1</span>;</span><br><span class="line">        T[x].k=k;</span><br><span class="line">        T[x].h=<span class="built_in">rand</span>()*<span class="built_in">rand</span>()%<span class="number">1000000</span>+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(k==T[x].k) ++T[x].t;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(k&lt;T[x].k) <span class="built_in">add</span>(T[x].l,k);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(k&gt;T[x].k) <span class="built_in">add</span>(T[x].r,k);</span><br><span class="line">    <span class="keyword">if</span>(T[x].l!=<span class="number">0</span>&amp;&amp;T[x].h&gt;T[T[x].l].h) <span class="built_in">rotate_r</span>(x);</span><br><span class="line">    <span class="keyword">if</span>(T[x].r!=<span class="number">0</span>&amp;&amp;T[x].h&gt;T[T[x].r].h) <span class="built_in">rotate_l</span>(x);</span><br><span class="line">    <span class="built_in">pushup</span>(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h2><p>Treap 的删除操作和插入操作相似，要一直找到对应元素值与删除值相等的位置，然后把这个位置的元素个数减一，如果个数为 $0$ 了，就删除这个节点，并将优先级较小的子节点放在这个位置，不过这时需要注意左右子节点是否存在。如果不存在这个节点，就说明没有这个元素。同样，最后的时候要更新结点个数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">remove</span><span class="params">(<span class="type">int</span> &amp;x,<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(k==T[x].k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(T[x].t&gt;<span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">        	--T[x].t;</span><br><span class="line">            <span class="built_in">pushup</span>(x);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(T[x].l==<span class="number">0</span>&amp;&amp;T[x].r==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            x=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(T[x].l!=<span class="number">0</span>&amp;&amp;(T[x].r==<span class="number">0</span>||T[T[x].l].h&lt;T[T[x].r].h))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">rotate_r</span>(x);</span><br><span class="line">            <span class="built_in">remove</span>(T[x].r,k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;   </span><br><span class="line">            <span class="built_in">rotate_l</span>(x);</span><br><span class="line">            <span class="built_in">remove</span>(T[x].l,k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">pushup</span>(x);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(k&lt;T[x].k) <span class="built_in">remove</span>(T[x].l,k);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">remove</span>(T[x].r,k);</span><br><span class="line">    <span class="built_in">pushup</span>(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="查询排名"><a href="#查询排名" class="headerlink" title="查询排名"></a>查询排名</h2><p>在 Treap 中查询一个元素的排名，只需要像之前一样一直访问直到找到这个元素即可。根节点在当前子树的排名就是左子树的大小加一，而左子树的所有节点的排名就是这个节点在左子树中的排名，右子树的所有节点的排名就是这个节点在右子树的排名加上左子树以及根节点的大小。由于访问不需要修改节点，就不需要再传址了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">num</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(k==T[x].k) <span class="keyword">return</span> T[T[x].l].s+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(k&lt;T[x].k) <span class="keyword">return</span> <span class="built_in">num</span>(T[x].l,k);</span><br><span class="line">    <span class="keyword">return</span> T[T[x].l].s+T[x].t+<span class="built_in">num</span>(T[x].r,k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="查询对应排名的元素"><a href="#查询对应排名的元素" class="headerlink" title="查询对应排名的元素"></a>查询对应排名的元素</h2><p>要查询相应排名的元素，只需要在每一次判断这个元素在当前节点的根节点、左子树还是右子树上。如果当前子树中的排名小于左子树的大小，那么这个元素就在左子树中，这个元素在左子树中的排名就是当前子树中的排名；如果不在左子树中但是排名小于等于左子树大小加上根节点的大小，那么这个元素就是根节点的元素值；否则就在右子树中，在右子树中的排名就是在当前子树中的排名减去左子树的大小和根节点的大小。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">sum</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1e9</span>;</span><br><span class="line">    <span class="keyword">if</span>(k&lt;T[T[x].l].s+<span class="number">1</span>) <span class="keyword">return</span> <span class="built_in">sum</span>(T[x].l,k);</span><br><span class="line">    <span class="keyword">if</span>(k&lt;=T[T[x].l].s+T[x].t) <span class="keyword">return</span> T[x].k;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(T[x].r,k-T[T[x].l].s-T[x].t);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="查询前驱和后继"><a href="#查询前驱和后继" class="headerlink" title="查询前驱和后继"></a>查询前驱和后继</h2><p>一个点的前驱指的是小于这个元素值的最大的元素，后继指的是大于这个元素值的最小的元素。要找到一个点的前驱，当这个点在这个子树中时，如果要找的元素值小于等于根节点的元素值，说明这个元素在左子树中，就搜索左子树，否则在右子树中或者就是根节点，就搜索右子树。如果在左子树中但是最后没有找到，也就是返回了 $0$，说明这个节点没有在这个子树中，返回 $0$。如果在右子树中没有找到，说明这个元素的前驱就是根节点。最后，返回找到的元素或者 $0$。后继的查询操作刚好相反。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">find_f</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(k&lt;=T[x].k) <span class="keyword">return</span> <span class="built_in">find_f</span>(T[x].l,k);</span><br><span class="line">    <span class="type">int</span> p=<span class="built_in">find_f</span>(T[x].r,k);</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="number">0</span>) <span class="keyword">return</span> T[x].k;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">find_b</span><span class="params">(<span class="type">int</span> x,<span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(k&gt;=T[x].k) <span class="keyword">return</span> <span class="built_in">find_b</span>(T[x].r,k);</span><br><span class="line">    <span class="type">int</span> p=<span class="built_in">find_b</span>(T[x].l,k);</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="number">0</span>) <span class="keyword">return</span> T[x].k;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Treap函数的调用"><a href="#Treap函数的调用" class="headerlink" title="Treap函数的调用"></a>Treap函数的调用</h2><p>我们总共学习了 $6$ 个 Treap 的相关函数。调用的时候我们需要调用 Treap 的根节点。由于 Treap 的形状在时刻变化，所以我们需要用一个变量 $r$ 来记录根节点，初始值为 $0$。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> z,k;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;z,&amp;k);</span><br><span class="line">        <span class="keyword">if</span>(z==<span class="number">1</span>) <span class="built_in">add</span>(r,k);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(z==<span class="number">2</span>) <span class="built_in">remove</span>(r,k);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(z==<span class="number">3</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">num</span>(r,k));</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(z==<span class="number">4</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">sum</span>(r,k));</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(z==<span class="number">5</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">find_f</span>(r,k));</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(z==<span class="number">6</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">find_b</span>(r,k));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><pre><code class="cpp">#include&lt;cstdio&gt;
+#include&lt;algorithm&gt;
+#include&lt;ctime&gt;
+using namespace std;
+int m,r=0,q=0;
+struct treap
+&#123;
+    int k,l,r,s,h,t;
+&#125;T[1000001];
+void pushup(int x)
+&#123;
+    T[x].s=T[T[x].l].s+T[T[x].r].s+T[x].t;
+&#125;
+void rotate_l(int &amp;x)
+&#123;
+    int p=T[x].r;
+    T[x].r=T[p].l;
+    T[p].l=x;
+    T[p].s=T[x].s;
+    x=p;
+    pushup(x);
+    pushup(T[x].l);
+&#125;
+void rotate_r(int &amp;x)
+&#123;
+    int p=T[x].l;
+    T[x].l=T[p].r;
+    T[p].r=x;
+    T[p].s=T[x].s;
+    x=p;
+    pushup(x);
+    pushup(T[x].r);
+&#125;
+void add(int &amp;x,int k)
+&#123;
+    if(x==0)
+    &#123;
+        x=++q;
+        T[x].l=T[x].r=0;
+        T[x].s=T[x].t=1;
+        T[x].k=k;
+        T[x].h=rand()*rand()%1000000+1;
+        return;
+    &#125;
+    if(k==T[x].k) ++T[x].t;
+    else if(k&lt;T[x].k) add(T[x].l,k);
+    else if(k&gt;T[x].k) add(T[x].r,k);
+    if(T[x].l!=0&amp;&amp;T[x].h&gt;T[T[x].l].h) rotate_r(x);
+    if(T[x].r!=0&amp;&amp;T[x].h&gt;T[T[x].r].h) rotate_l(x);
+    pushup(x);
+&#125;
+void remove(int &amp;x,int k)
+&#123;
+    if(x==0) return;
+    if(k==T[x].k)
+    &#123;
+        if(T[x].t&gt;1)
+        &#123;
+            --T[x].t;
+            pushup(x);
+            return;
+        &#125;
+        if(T[x].l==0&amp;&amp;T[x].r==0)
+        &#123;
+            x=0;
+            return;
+        &#125;
+        if(T[x].l!=0&amp;&amp;(T[x].r==0||T[T[x].l].h&lt;T[T[x].r].h))
+        &#123;
+            rotate_r(x);
+            remove(T[x].r,k);
+        &#125;
+        else
+        &#123;   
+            rotate_l(x);
+            remove(T[x].l,k);
+        &#125;
+        pushup(x);
+        return;
+    &#125;
+    if(k&lt;T[x].k) remove(T[x].l,k);
+    else remove(T[x].r,k);
+    pushup(x);
+&#125;
+int num(int x,int k)
+&#123;
+    if(x==0) return 1;
+    if(k==T[x].k) return T[T[x].l].s+1;
+    if(k&lt;T[x].k) return num(T[x].l,k);
+    return T[T[x].l].s+T[x].t+num(T[x].r,k);
+&#125;
+int sum(int x,int k)
+&#123;
+    if(x==0) return 1e9;
+    if(k&lt;T[T[x].l].s+1) return sum(T[x].l,k);
+    if(k&lt;=T[T[x].l].s+T[x].t) return T[x].k;
+    return sum(T[x].r,k-T[T[x].l].s-T[x].t);
+&#125;
+int find_f(int x,int k)
+&#123;
+    if(x==0) return 0;
+    if(k&lt;=T[x].k) return find_f(T[x].l,k);
+    int p=find_f(T[x].r,k);
+    if(p==0) return T[x].k;
+    return p;
+&#125;
+int find_b(int x,int k)
+&#123;
+    if(x==0) return 0;
+    if(k&gt;=T[x].k) return find_b(T[x].r,k);
+    int p=find_b(T[x].l,k);
+    if(p==0) return T[x].k;
+    return p;
+&#125;
+int main()
+&#123;
+    srand(time(NULL));
+    scanf(&quot;%d&quot;,&amp;m);
+    for(int i=1;i&lt;=m;++i)
+    &#123;
+        int z,k;
+        scanf(&quot;%d%d&quot;,&amp;z,&amp;k);
+        if(z==1) add(r,k);
+        else if(z==2) remove(r,k);
+        else if(z==3) printf(&quot;%d\n&quot;,num(r,k));
+        else if(z==4) printf(&quot;%d\n&quot;,sum(r,k));
+        else if(z==5) printf(&quot;%d\n&quot;,find_f(r,k));
+        else if(z==6) printf(&quot;%d\n&quot;,find_b(r,k));
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+
+    </div>
+
+    
+    
+    
+      
+
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="related-posts">
+  
+      <li class="related-posts-item"><a href="/post/Balanced-tree-Splay/">平衡树Splay</a></li>
+  
+  </ul>
+
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> 平衡树</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/Scan-line/" rel="prev" title="面积并扫描线">
+                  <i class="fa fa-chevron-left"></i> 面积并扫描线
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/Upper-and-lower-bound-network-flow/" rel="next" title="上下界网络流">
+                  上下界网络流 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+  <div class="comments giscus"></div>
+  <script src="https://giscus.app/client.js"
+          data-repo="2745518585/2745518585.github.io"
+          data-repo-id="R_kgDOIhHJaA"
+          data-category="Announcements"
+          data-category-id="DIC_kwDOIhHJaM4CS-MO"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="preferred_color_scheme"
+          data-lang="zh-CN"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <style>.giscus{width:initial}</style>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赵悦岑</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div class="running-time">
+    <span id="timeDate"></span>
+    <span id="times"></span>
+    <script>
+        var now = new Date();
+        function createtime() {
+            var grt= new Date("11/28/2022 00:00:00");
+            now.setTime(now.getTime()+250);
+            days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+            hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+            if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+            seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+            document.getElementById("timeDate").innerHTML = "本站已经安全运行 " + dnum + " 天";
+            document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        }
+    setInterval("createtime()",250);
+    </script>
+  </div>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
