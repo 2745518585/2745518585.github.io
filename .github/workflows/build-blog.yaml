@@ -33,7 +33,7 @@ jobs:
         git remote set-url origin git@github.com:${{ github.repository }}.git
 
     - name: Clone
-      run: git clone git@github.com:${{ github.repository }}.git .deploy_git
+      run: git clone --branch=main git@github.com:${{ github.repository }}.git .deploy_git
 
     - name: Generate
       run: hexo g
