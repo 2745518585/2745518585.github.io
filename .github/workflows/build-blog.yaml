@@ -38,5 +38,13 @@ jobs:
     - name: Generate
       run: hexo g
 
+    - name: Get current time
+      id: get_time
+      run: echo "CURRENT_TIME=$(date -u '+%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+
     - name: Deploy
-      run: hexo d
+      run: |
+        cd .deploy_git
+        git add .
+        git commit -m "Site updated: ${{ env.CURRENT_TIME }}"
+        git push
