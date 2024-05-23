@@ -33,7 +33,7 @@ jobs:
         git remote set-url origin git@github.com:${{ github.repository }}.git
 
     - name: Clone
-      run: git clone --branch=main git@github.com:${{ github.repository }}.git .deploy_git
+      run: git clone --branch=main git@github.com:${{ github.repository }}.git public
 
     - name: Generate
       run: hexo g
@@ -44,7 +44,7 @@ jobs:
 
     - name: Deploy
       run: |
-        cd .deploy_git
+        cd public
         git add .
         git commit -m "Site updated: ${{ env.CURRENT_TIME }}"
         git push
