@@ -41,7 +41,7 @@
 <p>反正彻底开摆了，一点才睡。</p>
 <h2 id="Day-2"><a href="#Day-2" class="headerlink" title="Day $2$"></a>Day $2$</h2><p>上午一看就不是人听的，希望不要 “不发证书”。</p>
 <p>下午不想去。</p>
-<p>晚上闭幕式，Cu $115$，Ag $200$，Au $245$。hyt 上来锐评题目，什么部分分较多都说得出来，祂说一句大家鼓一次掌，直接让祂下不了台。然后 dzd 上来直接就是一句 “我希望 NOI 的出题也能像 APIO 一样”，艹，烂完了，NOI 6 道通信题。</p>
+<p>晚上闭幕式，Cu $115$，Ag $200$，Au $245$。hwt 上来锐评题目，什么部分分较多都说得出来，祂说一句大家鼓一次掌，直接让祂下不了台。然后 dzd 上来直接就是一句 “我希望 NOI 的出题也能像 APIO 一样”，艹，烂完了，NOI 6 道通信题。</p>
 <p>省流：颓了一整天。</p>
 <h2 id="Day-3"><a href="#Day-3" class="headerlink" title="Day $3$"></a>Day $3$</h2><p>润。大巴居然来迟了二十分钟，早高峰都成理由了。</p>
 ]]></content>
@@ -146,6 +146,8 @@
 <p>记 $f_{p_1,p_2}$ 表示最终结果为 $(p_1,p_2)$ 时 $[2,n]$ 中可以满足的 $i$ 的个数（即 $a_i,b_i$ 分别是 $p_1,p_2$ 或 $p_2,p_1$ 的倍数），考虑通过类似高位前缀和的方式转移，只需要在 $f_{\gcd(a_1,a_i),\gcd(b_1,b_i)}$ 与 $f_{\gcd(a_1,b_i),\gcd(b_1,a_i)}$ 处分别 $+1$，在这两个的 $\gcd$ 处 $-1$ 避免重复即可。如果 $f_{i,j} &#x3D; n-1$ 则表示 $(i,j)$ 合法，而代价可以用相同的方式转移。</p>
 <h4 id="QOJ5034"><a href="#QOJ5034" class="headerlink" title="QOJ5034 &gt;.&lt;"></a><a href="https://qoj.ac/problem/5034">QOJ5034</a> &gt;.&lt;</h4><p>考虑将 $k$ 条路径和 $n$ 个单点建 AC 自动机，标记每条路径的结尾点不能走，答案即为 $1$ 到 $n$ 的最短路。一个点可能在 AC 自动机上出现很多次，直接做是 $O(n^2)$ 的。由于出边是继承自 fail 的，只有在当前点存在该儿子时被修改，所以会存在大量的点的某一个出边指向同一个点，并且这些边对应原图中的同一条边，在跑 dij 时显然只用更新一次。考虑可持久化，每个点继承 fail 的线段树，然后将当前点存在的儿子在线段树上新建节点，跑最短路时每次访问过的点直接删除。注意 $1 \sim n$ 单点的每个儿子需单独建点，以区分不同的边。</p>
 <h4 id="QOJ5015-树"><a href="#QOJ5015-树" class="headerlink" title="QOJ5015 树"></a><a href="https://qoj.ac/problem/5015">QOJ5015</a> 树</h4><p>容易想到确定一个根后分层，相邻两层确定连边。假设要确定 $A$ 到 $B$ 的连边，注意到 $B$ 中一点到 $P \subseteq A$ 的距离等于其父亲到 $P$ 的距离加 $|P|$，考虑随机平分 $A$ 得到 $P$ 后分治，可以证明 $P$ 是 $A$ 中任意一个等价类大小不超过 $\frac{|A|}{2}$，并且由于随机无法卡满。</p>
+<h4 id="QOJ5016-Range-Minimum-Element"><a href="#QOJ5016-Range-Minimum-Element" class="headerlink" title="QOJ5016 Range Minimum Element"></a><a href="https://qoj.ac/problem/5016">QOJ5016</a> Range Minimum Element</h4><p>称 $a$ 最终得到的 $b$ 为 $F(a)$。考虑以下过程：对于一个数组 $b$，从小到大枚举 $x$，对于所有 $b_i &gt; x$ 有 $a_{l_i \sim r_i} &gt; x$，将 $a$ 中没有被限制且没有被填的位置填入 $x$，最终得到的 $a$ 记为 $G(b)$。显然有 $F(G(b))&#x3D;b$，即 $b$ 和 $G(b)$ 一一对应，考虑统计合法的 $G(b)$ 的个数。</p>
+<p>记 $f_{i,j,k}$ 表示 $[i,j]$ 中填入 $[c-k+1,c]$ 合法的方案，转移枚举 $l$ 为第一个 $k$ 的位置，有 $f_{i,j,k} \leftarrow f_{i,l-1,k-1} f_{l+1,j,k}$，显然 $[i,l-1]$ 需合法。整个区间合法时再加上不填 $k$ 的方案。$f_{1,n,c}$ 即为答案。注意到 $f$ 为关于 $c$ 的 $n$ 次多项式，求出 $c \in [0,n]$ 的答案后拉插即可。</p>
 <h4 id="CF1967D-Long-Way-to-be-Non-decreasing"><a href="#CF1967D-Long-Way-to-be-Non-decreasing" class="headerlink" title="CF1967D Long Way to be Non-decreasing"></a><a href="https://codeforces.com/contest/1967/problem/D">CF1967D</a> Long Way to be Non-decreasing</h4><p>二分答案，从前往后每个数选择基环树上 $mid$ 步能到达的点中最小的点，双指针扫描即可。</p>
 <h4 id="CF1967E2-Again-Counting-Arrays-Hard-Version"><a href="#CF1967E2-Again-Counting-Arrays-Hard-Version" class="headerlink" title="CF1967E2 Again Counting Arrays (Hard Version)"></a><a href="https://codeforces.com/contest/1967/problem/E2">CF1967E2</a> Again Counting Arrays (Hard Version)</h4><p>考虑对于一个确定的 $a$ 如何构造 $b$，容易发现能 $+1$ 就 $+1$ 是不劣的，不难证明。转化为统计路径，每一步向右移动一格，向上或向下移动一格。可以直接反射容斥，注意可能终点不在 $[0,m]$ 之间，容斥时钦定经过一次上边界即可。</p>
 ]]></content>
