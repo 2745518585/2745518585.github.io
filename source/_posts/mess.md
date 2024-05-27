@@ -305,3 +305,41 @@ $$
 #### [CF1967E2](https://codeforces.com/contest/1967/problem/E2) Again Counting Arrays (Hard Version)
 
 考虑对于一个确定的 $a$ 如何构造 $b$，容易发现能 $+1$ 就 $+1$ 是不劣的，不难证明。转化为统计路径，每一步向右移动一格，向上或向下移动一格。可以直接反射容斥，注意可能终点不在 $[0,m]$ 之间，容斥时钦定经过一次上边界即可。
+
+#### [QOJ5019](https://qoj.ac/contest/1033/problem/5019) 整数
+
+从高位到低位做，记 $f_i$ 表示第 $j$ 个数是否贴上限的答案，容易 $3^n$ 转移。考虑使用 FWT 优化，$f_i$ 中 $i$ 的第 $j$ 位为 $0/1$ 表示不贴上限/贴上限，$g_i$ 中 $i$ 的第 $j$ 位表示第 $j$ 个数的当前位，根据 $R_i$ 当前位的不同有两种转移：
+
+- $R_i$ 当前位为 $0$：$f_0 (g_0+g_1) \rightarrow f_0, f_1 g_0 \rightarrow f_1$。
+- $R_i$ 当前位为 $1$：$f_0 (g_0+g_1) + f_1 g_0 \rightarrow f_0, f_1 g_1 \rightarrow f_1$。
+
+对于第一个转移，设 $h_0=g_0+g_1,h_1=g_0$，那么转移即为 $f_i = f_ih_i$。
+
+对于第二个转移，显然是按位与卷积，使用 FWT 解决。
+
+将两种转移合在一起，FWT 时仅操作 $R_i$ 当前位为 $1$ 的位即可。
+
+#### [CF1975F](https://codeforces.com/contest/1975/problem/F) Set
+
+枚举 $S$ 每一位，显然当枚举到第 $i$ 位时，剩下的 $T$ 只剩 $2^{n-x}$ 种，枚举 $T$ 并更新即可。
+
+#### [CF1943D2](https://codeforces.com/contest/1943/problem/D2) Counting Is Fun (Hard Version)
+
+不难发现，合法当且仅当 $a_i \le a_{i-1}+a_{i+1}$。容斥，钦定多少个 $i$ 不满足，dp 即可。
+
+#### [CF1943E2](https://codeforces.com/contest/1943/problem/E2) MEX Game 2 (Hard Version)
+
+二分答案，设 $f_i$ 为 $i$ 的个数，显然 Alice 的策略为每次取 $f$ 最小的一个。枚举 Bob 最后要删空的数 $x$，由于 Alice 总是取当前最少的数，所以比 $x$ 多的数显然不用管，而 Bob 需要保证 $x$ 始终是剩余数中最大的，那么其策略即为每次将一个后缀减少到“几乎相等”（即极差不超过 $1$）。我们可以找到所有数“几乎相等”的时刻，可以通过二分解决。此后的情况容易处理。
+
+#### [CF1943F](https://codeforces.com/contest/1943/problem/F) Minimum Hamming Distance
+
+钦定 $t$ 中 $0$ 为众数，否则翻转 $s,t$ 即可。对于 $s_i=0$，显然有 $[1,n]$ 满足条件。设一个区间的权值为 $1$ 减 $0$ 的个数，对于 $s_i=1$，满足条件当且仅当一个包含 $i$ 的区间权值大于等于 $0$，显然 $i$ 为这个区间的端点之一。记 $f_{i,j}$ 表示枚举到前 $i$ 个数，$[1,i]$ 后缀最大权值为 $j$，第一种容易转移，第二种枚举右端点，显然翻转 $0$ 需尽量靠后，容易转移。
+
+#### [CF1948F](https://codeforces.com/contest/1948/problem/F) Rare Coins
+
+转化为 $x$ 个银币比 $y$ 个银币价值多 $k$ 的方案数，为 $\sum\limits_d \sum\limits_i \binom{x}{d+i} \binom{y}{i} = \sum\limits_d \binom{x+y}{y+d}$，注意到 $x+y$ 为总共银币数量不会改变，预处理即可。
+
+#### [CF1936D](https://codeforces.com/contest/1936/problem/D) Bitwise Paradox
+
+注意到 $v$ 是固定的，考虑线段树上维护前后缀每个 $b$ 的或和对应的 $a$ 的最大值，显然前后缀不同的或分别只有 $\log$ 种，容易维护。
+
