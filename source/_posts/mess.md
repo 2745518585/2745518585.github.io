@@ -368,3 +368,25 @@ $$
 #### [CF1930H](https://codeforces.com/contest/1930/problem/H) Interactive Mex Tree
 
 转化为查询路径外点的 $min$。按照 dfs 时进栈的顺序和出栈的顺序，可以将一条路径外的所有点划分成五个区间。
+
+#### [QOJ4805](https://qoj.ac/problem/4805) Grammy Sorting
+
+[题解](https://www.cnblogs.com/YunQianQwQ/p/18164910) [双极定向](https://www.cnblogs.com/yyyyxh/p/ear_decoposition_bipolar_orientation.html)
+
+考虑维护一个合法的子图然后依次加入点，构造双极定向，按照拓扑序倒着考虑每个点。现在有一个包含 $B$ 的子图 $G$，$G$ 内每个点到 $B$ 的路径权值递增，考虑加入一个点 $x$，找到 $x$ 权值最小的后继 $v$：
+
+- 当 $p_A < p_v$ 时，操作 $A$ 到 $x$ 的路径。
+- 当 $p_A > p_v$ 时，将 $v$ 加入操作路径，并找到 $v$ 的最小后继作为新的 $v$。重复以上步骤直到 $p_A < p_v$ 或者 $v = B$，操作后新的子图显然合法。
+
+#### [QOJ5022](https://qoj.ac/problem/5022) 【模板】线段树
+
+可以转化为 $n \times m$ 的网格，每个格子向上连边，第 $i-1$ 行 $[l_i,r_i-1]$ 的格子向右上方连边。考虑在 $m$ 这一维上分块，对于每一块，将块内出现的每个 $l,r,pos$ 设为关键点，考虑每一段内的转移，显然未出现斜向边的行是无用的，容易处理。
+
+现在知道一个 $w \times h$ 左侧和下侧所有点的答案，要求上侧和右侧所有点的答案，分类讨论：
+
+- $(s,0) \rightarrow (w,t): \binom{t}{w-s}$
+- $(s,0) \rightarrow (t,h): \binom{h}{t-s}$
+- $(0,s) \rightarrow (t,h): \binom{h-s}{t}$
+- $(0,s) \rightarrow (w,t): \binom{t-s}{w}$
+
+显然对于方案为奇数的转移才有效，而 $\binom{n}{m} \equiv 1 \bmod 2$ 当且仅当 $n\&m=m$，上面四种均可在 $\max(h,w) \log$ 的时间解决。总复杂度 $O(n\sqrt{n}\log n)$。
