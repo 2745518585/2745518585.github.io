@@ -185,7 +185,7 @@
 <li>$(0,s) \rightarrow (t,h): \binom{h-s}{t}$</li>
 <li>$(0,s) \rightarrow (w,t): \binom{t-s}{w}$</li>
 </ul>
-<p>显然对于方案为奇数的转移才有效，而 $\binom{n}{m} \equiv 1 \bmod 2$ 当且仅当 $n&amp;m&#x3D;m$，上面四种均可在 $\max(h,w) \log$ 的时间解决。总复杂度 $O(n\sqrt{n}\log n)$。</p>
+<p>显然对于方案为奇数的转移才有效，而 $\binom{n}{m} \equiv 1 \bmod 2$ 当且仅当 $n \ \text{and} \ m&#x3D;m$，上面四种均可在 $\max(h,w) \log$ 的时间解决。总复杂度 $O(n\sqrt{n}\log n)$。</p>
 ]]></content>
       <tags>
         <tag>杂题</tag>
