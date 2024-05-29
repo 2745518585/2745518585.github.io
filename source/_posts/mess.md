@@ -389,4 +389,4 @@ $$
 - $(0,s) \rightarrow (t,h): \binom{h-s}{t}$
 - $(0,s) \rightarrow (w,t): \binom{t-s}{w}$
 
-显然对于方案为奇数的转移才有效，而 $\binom{n}{m} \equiv 1 \bmod 2$ 当且仅当 $n\&m=m$，上面四种均可在 $\max(h,w) \log$ 的时间解决。总复杂度 $O(n\sqrt{n}\log n)$。
+显然对于方案为奇数的转移才有效，而 $\binom{n}{m} \equiv 1 \bmod 2$ 当且仅当 $n \ \text{and} \ m=m$，上面四种均可在 $\max(h,w) \log$ 的时间解决。总复杂度 $O(n\sqrt{n}\log n)$。
