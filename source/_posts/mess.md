@@ -418,3 +418,17 @@ $$
 #### [CF1924F](https://www.luogu.com.cn/problem/CF1924F) Anti-Proxy Attendance
 
 容易想到在三部分中排除一部分，假设回复无人缺席为 $0$，有人缺席为 $1$，分类讨论，发现无法在三次询问内排除一部分，但四次询问会超出限制。注意到四次询问的情况一定不会排除中间的部分，那么将中间部分取小一点即可，dp 或者按比例分。
+
+#### [CF1817F](https://www.luogu.com.cn/problem/CF1817F) Entangled Substrings
+
+显然 $ac$ 和 $b$ 出现位置的差分数组是相同的，一个字符串 $S$ 的子串的出现位置集合只有 $O(n)$ 种，使用 SA 或 SAM 求出每种出现位置的集合，用哈希将差分数组相同分在一组。对于每一组，出现位置集合相同的字符串显然由若干个 $x_i$ 开头长度为 $[l_i,r_i]$ 的字符串组成。考虑两种字符串 $i,j(x_i < x_j)$ 的贡献：由于两个字符串要恰好拼接在一起，所以必须满足 $x_j - x_i \in [l_i,r_i]$，方案为 $(r_j-l_j+1)(x_j-x_i-l_i+1)$，排序后二分即可。
+
+#### [UOJ577](https://uoj.ac/problem/577) 打击复读
+
+建 SAM，令 $[l_x,r_x]$ 表示 SAM 上 $x$ 节点的最小、最大长度，那么节点 $x$ 的贡献为：
+
+$$
+|endpos_x| \left(\sum\limits_{i \in endpos_x} wr_i \right) \left(\sum\limits_{i \in endpos_x} \sum\limits_{j=l_x}^{r_x} wl_{i-j+1} \right)
+$$
+
+后面部分用后缀和拆开，那么现在要求 $\sum\limits_{i \in endpos_x} wl'_{i-p+1}$ 其中 $p=l_x-1,r_x$，$p=r_x$ 时上式等于字符串 $[i-r_x+1,i]$ 左权值和，$p=l_x-1$ 时长度为 $l_x-1$ 的字符串的 $endpos$ 与 $endpos_x$ 不同，用字符串 $[i-l_x+1,i]$ 的左端点前一个点的权值之和即可。倍增找到一个字符串对应的节点。由于只会修改 $wl$，考虑将整个字符串翻转变为修改 $wr$，注意到修改一个 $wr$ 仅会影响对应节点到根的一条链，容易统计答案的变化量。
