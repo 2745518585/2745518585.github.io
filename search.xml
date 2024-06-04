@@ -219,6 +219,7 @@
 </ul>
 </li>
 </ul>
+<h4 id="CF1842H-Tenzing-and-Random-Real-Numbers"><a href="#CF1842H-Tenzing-and-Random-Real-Numbers" class="headerlink" title="CF1842H Tenzing and Random Real Numbers"></a><a href="https://www.luogu.com.cn/problem/CF1842H">CF1842H</a> Tenzing and Random Real Numbers</h4><p>考虑将 $1$ 消掉，每个 $x$ 在 $[-0.5,0.5]$ 中均匀随机，条件变为 $x_i + x_j \leq 0$ 和 $x_i + x_j \geq 0$。显然 $x_i+x_j$ 的正反由绝对值较大的一个数的正负决定，考虑按绝对值从小到大将 $x$ 加入集合，第一种条件可以转换为当 $x_i \geq 0$ 一定有 $|x_j| \geq |x_i|$，也就是 $j$ 在 $i$ 后加入集合，第二种同理，容易 $2^n n$ dp。</p>
 ]]></content>
       <tags>
         <tag>杂题</tag>

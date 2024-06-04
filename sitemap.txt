@@ -57,6 +57,7 @@ https://zyc.pond.ink/post/Sustainable-segment-tree/
 https://zyc.pond.ink/post/P4638-solution/
 https://zyc.pond.ink/post/P2065-solution/
 https://zyc.pond.ink/post/Upper-and-lower-bound-network-flow/
+https://zyc.pond.ink/post/Balanced-tree-Treap/
 https://zyc.pond.ink/post/Scan-line/
 https://zyc.pond.ink/post/minimum-cost-maximum-flow-EK/
 https://zyc.pond.ink/post/maximum-flow-ISAP/
@@ -71,7 +72,6 @@ https://zyc.pond.ink/post/APIO2024-travels/
 https://zyc.pond.ink/post/APIO2023-travels/
 https://zyc.pond.ink/post/ARC160-solution/
 https://zyc.pond.ink/post/Balanced-tree-Splay/
-https://zyc.pond.ink/post/Balanced-tree-Treap/
 https://zyc.pond.ink/post/Aho-Corasick-automaton/
 https://zyc.pond.ink/
 https://zyc.pond.ink/tags/%E6%B8%B8%E8%AE%B0/
