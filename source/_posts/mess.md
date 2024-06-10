@@ -465,3 +465,18 @@ $$
 #### [CF1842H](https://www.luogu.com.cn/problem/CF1842H) Tenzing and Random Real Numbers
 
 考虑将 $1$ 消掉，每个 $x$ 在 $[-0.5,0.5]$ 中均匀随机，条件变为 $x_i + x_j \leq 0$ 和 $x_i + x_j \geq 0$。显然 $x_i+x_j$ 的正反由绝对值较大的一个数的正负决定，考虑按绝对值从小到大将 $x$ 加入集合，第一种条件可以转换为当 $x_i \geq 0$ 一定有 $|x_j| \geq |x_i|$，也就是 $j$ 在 $i$ 后加入集合，第二种同理，容易 $2^n n$ dp。
+
+#### [CF1984E](https://codeforces.com/contest/1984/problem/E) Shuffle
+
+先忽略根为叶子的情况，考虑相邻两个点，显然其中一个是另一个的祖先，即两个相邻的点最多有一个叶子。考虑找到最大独立集，容易构造叶子集合为最大独立集的方案，即答案为最大独立集。当根为叶子时，答案为根删去后最大独立集 $+1$，换根 dp 即可。
+
+#### [CF1984F](https://codeforces.com/contest/1984/problem/F) Reconstruction
+
+钦定 $s_0=\text{P},s_{n+1}=\text{S},b_0=b_{n+1}=0$，设 $k=\sum a_i$，大胆猜测，合法当且仅当满足：
+
+- 对于 $s_i=\text{P}$，有 $\text{abs}(b_i) \le i \times m$，对于 $s_i=\text{S}$，有 $\text{abs}(b_i) \le (n-i+1) \times m$。
+- 对于 $s_i=s_{i+1}$，有 $\text{abs}(b_i-b_{i+1}) \le m$。
+- 对于 $s_i=\text{P},s_{i+1}=\text{S}$，有 $b_i+b_{i+1} = k$。
+- 对于 $s_i=\text{S},s_{i+1}=\text{P}$，有 $\text{abs}(b_i+b_{i+1}-k) \le 2m$。
+
+容易证明以上条件是充分的。注意到一定存在 $i$ 使得 $s_i=\text{P},s_{i+1}=\text{S}$，那么枚举 $k = b_i+b_{i+1}$ 即可。
