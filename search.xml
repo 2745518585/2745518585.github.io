@@ -243,6 +243,17 @@
 </ol>
 <h4 id="CF1874E-Jellyfish-and-Hack"><a href="#CF1874E-Jellyfish-and-Hack" class="headerlink" title="CF1874E Jellyfish and Hack"></a><a href="https://codeforces.com/contest/1874/problem/E">CF1874E</a> Jellyfish and Hack</h4><p>设 $f_{i,j}$ 表示长度为 $i$ 的排列需要操作 $j$ 的方案，枚举第一个数的值，容易做到 $n^6$ dp。不难发现答案为 $O(n^2)$ 次的多项式，拉插即可。</p>
 <h4 id="CF1874F-Jellyfish-and-OEIS"><a href="#CF1874F-Jellyfish-and-OEIS" class="headerlink" title="CF1874F Jellyfish and OEIS"></a><a href="https://codeforces.com/contest/1874/problem/F">CF1874F</a> Jellyfish and OEIS</h4><p>将 ${p_l,\dots,p_r} &#x3D; {l,\dots,r}$ 的区间称为好的，容易发现对于两个相交但不包含的好区间 $[l_1,r_1],[l_2,r_2] (l_1&lt;l_2)$，区间 $[l_1,l_2-1],[l_2,r_1],[r_1+1,r_2]$ 都是好的。考虑容斥，由上面的结论，只考虑容斥的区间相交或包含即可不重不漏。记 $f_{i,j}$ 表示只考虑 $[i,j]$ 中的区间的方案和，用 $g_{i,j,k}$ 表示只考虑 $[i,j]$ 中的区间，未被任何区间包含的数有 $k$个，除去未被包含数的方案和来辅助转移，$g$ 转移到 $f$ 时乘上 $k!$ 即可。</p>
+<h4 id="CF1608F-MEX-counting"><a href="#CF1608F-MEX-counting" class="headerlink" title="CF1608F MEX counting"></a><a href="https://codeforces.com/contest/1608/problem/F">CF1608F</a> MEX counting</h4><p>设 $f_{i,j,k}$ 表示考虑前 $i$ 个数，$\text{mex} &#x3D; k$，$&gt;k$ 的数有 $j$ 种，这 $j$ 种数具体的值不方便记录，可以先不确定等到移动 $\text{mex}$ 时再确定，。当下一个数 $p \neq k$ 时，$\text{mex}$ 不变，有以下几种转移：</p>
+<ul>
+<li>$p &lt; k$，$k \times f_{i,j,k} \rightarrow f_{i+1,j,k}$。</li>
+<li>$p &gt; k$ 且 $p$ 属于出现过的 $j$ 种数中的一种，$j \times f_{i,j,k} \rightarrow f_{i+1,j,k}$。</li>
+<li>$p &gt; k$ 且 $p$ 未出现过，$f_{i,j,k} \rightarrow f_{i+1,j+1,k}$。</li>
+</ul>
+<p>当 $p &#x3D; k$ 时，考虑枚举 $t$ 表示 $[p+1,t-1]$ 中的数全部出现过且 $t$ 未出现，那么有 $A_{j}^{t-p-1} \times f_{i,j,k} \rightarrow f_{i+1,j-(t-k-1),t}$，展开得到 $\frac{j!}{(j-(t-k-1))!} \times f_{i,j,k} \rightarrow f_{i+1,j-(t-k-1),t}$。</p>
+<p>容易发现对于每个 $i$，$k$ 这一维合法的状态仅有 $O(k)$ 种，复杂度 $O(n^2k)$</p>
+<h4 id="CF1844G"><a href="#CF1844G" class="headerlink" title="CF1844G"></a><a href="https://codeforces.com/contest/1844/problem/G">CF1844G</a></h4><p>令 $1$ 为根，$dep_i$ 表示 $i$ 的深度，显然有 $d_i &#x3D; dep_i + dep_{i+1} - 2dep_{lca(i,i+1)}$，考虑去掉最后一项，容易发现将整个式子模 $2$ 后，变成 $d_i \equiv dep_i + dep_{i+1} \pmod 2$，可以递推得到 $dep_i \bmod 2$ 的值。考虑将模数变为 $4$，容易发现只需要知道 $dep_{lca(i,i+1)} \bmod 2$ 的值即可递推，而这个值在上一轮已经求出，倍增直到模数大于 $nV$ 即可。</p>
+<h4 id="CF1976F"><a href="#CF1976F" class="headerlink" title="CF1976F"></a><a href="https://codeforces.com/contest/1976/problem/F">CF1976F</a></h4><p>由于 $1$ 的度数为 $1$，显然第一次添加的边一端必须是 $1$，另一端显然是叶子。考虑贪心地把树划成一些祖先 $-$ 后代链使得按长度降序排序后字典序最大，即对于每个点加入其所有儿子所在链中最长的链。假设当前已经不是割边的边为一些链的并集，此时选择两条最长的未被选择的链并将其对应叶子连接在一起显然是合法的且最优的，而连接之后已经不是割边的边仍然为一些链的并集。也就是最开始连接 $1$ 和其所在链对应儿子后每次会选择长度最大的两条链，且因为 $1$ 所在链是所有链最长的，所以这种方案一定最优。</p>
+<h4 id="CF1923F"><a href="#CF1923F" class="headerlink" title="CF1923F"></a><a href="https://codeforces.com/contest/1923/problem/F">CF1923F</a></h4><p>显然最多只会翻转一次。假如不进行翻转操作，尽量将前面的 $1$ 扔到后面即可。进行一次翻转操作，记操作后第一个 $1$ 的位置为 $l$，最后一个 $1$ 的位置为 $r$，得到的数即为 $[l,r]$ 翻转后的结果，显然首先需要最小化区间长度，再最小化 $[l,r]$ 翻转后的字典序。一个区间合法当且仅当 $r-l+1$ 大于等于 $1$ 的个数且不在 $[l,r]$ 的 $1$ 的个数不超过 $k-1$，双指针扫描可以得到最小长度。显然区间外的 $1$ 会填入翻转后区间的一个后缀，不难发现任意两个区间在后缀填入相同数量的 $1$ 后大小关系不变，此时只需要找到合法的 $O(n)$ 个区间中字典序最小的一个，二分哈希或后缀排序即可。</p>
 ]]></content>
       <tags>
         <tag>杂题</tag>
