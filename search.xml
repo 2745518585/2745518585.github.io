@@ -259,6 +259,11 @@
 <h4 id="CF1896F-Bracket-Xoring"><a href="#CF1896F-Bracket-Xoring" class="headerlink" title="CF1896F Bracket Xoring"></a><a href="https://codeforces.com/contest/1896/problem/F">CF1896F</a> Bracket Xoring</h4><p>容易发现相邻两个位置填 <code>()</code> 时这两个位置的数的异或一定不变，填 <code>((</code> 或 <code>))</code> 时一定改变，那么用这种方法可以使 $a_{2i+1} &#x3D; a_{2i+2}$，构造出来不合法显然无解。在 $a_{2i+1} &#x3D; a_{2i+2}$ 的情况下，通过填入 <code>()</code> 或 <code>)(</code> 可以使对应的两个数均变为和 $a_1$ 相等，为了合法开头和结尾两个分别填入 <code>((</code> 和 <code>))</code>。此时有 $a_1 \neq a_2,a_{2n-1} \neq a_{2n}$，可以通过 <code>((()()...()))</code> 来调整。注意到每次操作均会改变 $a_1$ 和 $a_{2n}$，所以初始必然有 $a_1 &#x3D; a_{2n}$，否则无解。剩下的情况一定所有数均相同，如果全为 $1$ 通过 <code>()()...()()</code> 调整即可。</p>
 <h4 id="QOJ8522-Waterfall-Matrix"><a href="#QOJ8522-Waterfall-Matrix" class="headerlink" title="QOJ8522 Waterfall Matrix"></a><a href="https://qoj.ac/problem/8522">QOJ8522</a> Waterfall Matrix</h4><p>容易想到对分界线 dp，枚举 $i$，dp 找到在分界线左侧 $&lt;i$ 的数加分界线右侧 $\geq i$ 的数最小的方案，答案即为每个 $i$ 贡献的和。不难发现 $i-1$ 的最优分界线一定在 $i$ 右下，考虑分治，对于 $mid$ 求出答案后分别递归两侧。</p>
 <p>考虑对于 $k$ 个点如何快速求答案，我们需要维护一个不降序列 $f$，操作为前缀或后缀 $+1$，然后将每个数设为其后缀最小值。考虑使用 multiset 维护差分，集合中元素 $i$ 有 $j$ 个表示 $f_i-f_{i-1}&#x3D;j$，后缀 $[i,n]$ $+1$ 直接插入 $i$，前缀 $[1,i]$ $+1$ 插入 $0$ 然后找到集合中最大的 $\leq i$ 的数然后删去即可。</p>
+<h4 id="QOJ8523-Puzzle-II"><a href="#QOJ8523-Puzzle-II" class="headerlink" title="QOJ8523 Puzzle II"></a><a href="https://qoj.ac/problem/8523">QOJ8523</a> Puzzle II</h4><p>考虑将较少的一种球移到对面，考虑用两次操作将两个序列中指定的球交换（相对位置可能变化），不难发现有：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">aaaaax      ybbbbx      yaaaaa</span><br><span class="line">ybbbb       aaaaa       bbbbx</span><br></pre></td></tr></table></figure>
+
+<p>其中 $a$ 有 $k$ 个，$b$ 有 $k-1$ 个，容易通过这种方法构造方案。考虑如何维护操作后的序列，使用两个 deque 维护这两个区间，每次操作均可直接维护。</p>
+<h4 id="QOJ8525-Mercenaries"><a href="#QOJ8525-Mercenaries" class="headerlink" title="QOJ8525 Mercenaries"></a><a href="https://qoj.ac/problem/8525">QOJ8525</a> Mercenaries</h4><p>将 $(S_i,M_i)$ 视为坐标系上的点，那么合法条件即为在一条直线右上，考虑维护凸包，加入一条边的贡献显然是闵可夫斯基和。用线段树维护一个区间的雇佣兵和商品的凸包，线段树二分即可，将询问按斜率排序后每个凸包记录一个指针扫描可以做到单 $\log$。</p>
 ]]></content>
       <tags>
         <tag>杂题</tag>
