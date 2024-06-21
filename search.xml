@@ -264,6 +264,9 @@
 
 <p>其中 $a$ 有 $k$ 个，$b$ 有 $k-1$ 个，容易通过这种方法构造方案。考虑如何维护操作后的序列，使用两个 deque 维护这两个区间，每次操作均可直接维护。</p>
 <h4 id="QOJ8525-Mercenaries"><a href="#QOJ8525-Mercenaries" class="headerlink" title="QOJ8525 Mercenaries"></a><a href="https://qoj.ac/problem/8525">QOJ8525</a> Mercenaries</h4><p>将 $(S_i,M_i)$ 视为坐标系上的点，那么合法条件即为在一条直线右上，考虑维护凸包，加入一条边的贡献显然是闵可夫斯基和。用线段树维护一个区间的雇佣兵和商品的凸包，线段树二分即可，将询问按斜率排序后每个凸包记录一个指针扫描可以做到单 $\log$。</p>
+<h4 id="QOJ8526-Polygon-II"><a href="#QOJ8526-Polygon-II" class="headerlink" title="QOJ8526 Polygon II"></a><a href="https://qoj.ac/problem/8526">QOJ8526</a> Polygon II</h4><p>转化题意为求最大的数不超过其他数之和的概率。记 $n-1$ 个数的和减去剩下的数的差为 $S$，考虑求出 $S&lt;0$ 的概率，在二进制下按位考虑，设 $b_i$ 表示有多少个 $a_j \geq i$，$f_{i,j}$ 确定前 $i-1$ 位，上一位进位为 $j-1$。由于 $b_i$ 个数每个数等概率选择 $0$ 和 $1$，那么对 $S$ 当前位的贡献为 $b_i$ 个 $0&#x2F;1$ 的和减一，枚举有其中有 $k$ 个 $1$，那么有转移 $\frac{f_{i-1,j} \binom{b_i}{k}}{2^{b_i}} \rightarrow f_{i,\lfloor \frac{j+k}{2} \rfloor}$。</p>
+<p>考虑统计答案，设最大的那个数位数为 $i$，显然其他数不能在高于 $i$ 位出现 $1$，那么 $f_{i,0}$ 乘上 $&gt;i$ 的位均为 $0$ 的概率即为答案，加起来即可。</p>
+<h4 id="QOJ5175-翻修道路"><a href="#QOJ5175-翻修道路" class="headerlink" title="QOJ5175 翻修道路"></a><a href="https://qoj.ac/problem/5175">QOJ5175</a> 翻修道路</h4><p>记 $f_{i,j,k}$ 表示从 $j$ 出发到达 $i$ 中的关键点修改 $k$ 次后最大距离的最小值，容易 $3^n m^3$ 转移，注意到合并两个状态是对两个数取 $\max$，在第三维双指针即可，$O(2^n m^3 + 3^n m^2)$。</p>
 ]]></content>
       <tags>
         <tag>杂题</tag>
